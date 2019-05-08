@@ -32,9 +32,4 @@ public interface Board {
      */
     void doMove(Move nextMove);
 
-    /**
-     *
-     */
-    void removePiece(Piece piece);
-
 }

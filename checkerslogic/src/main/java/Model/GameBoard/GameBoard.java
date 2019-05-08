@@ -89,8 +89,8 @@ public class GameBoard implements Interface.Board {
 
     }
 
-    @Override
-    public void removePiece(Piece piece) {
+
+    private void removePiece(Piece piece) {
 
     }
 }
