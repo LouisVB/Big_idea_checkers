@@ -9,17 +9,21 @@ public class Move {
     private Location newLocation;
     private MoveType type;
 
-    // Normal Move
+    // NORMAL Move
     public Move(Piece myPiece, Location newLocation, MoveType type) {
         this.myPiece = myPiece;
         this.newLocation = newLocation;
         this.type = type;
     }
-    // Kill Move
+    // KILL Move
     public Move(Piece myPiece, Piece enemyPiece, Location newLocation, MoveType type) {
         this.myPiece = myPiece;
         this.enemyPiece = enemyPiece;
         this.newLocation = newLocation;
+        this.type = type;
+    }
+    //empty move
+    public Move(MoveType type) {
         this.type = type;
     }
 

@@ -1,7 +1,7 @@
 package Model.GameBoard.Type;
 
 public enum MoveType {
-    Normal(1), Kill(2);
+    NONE(0), NORMAL(1), KILL(2);
 
     final int type;
 
