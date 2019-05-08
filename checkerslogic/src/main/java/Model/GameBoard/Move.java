@@ -1,22 +1,22 @@
 package Model.GameBoard;
 
-import Model.GameBoard.Type.TypeMove;
+import Model.GameBoard.Type.MoveType;
 
 public class Move {
 
     private Piece myPiece;
     private Piece enemyPiece;
     private Location newLocation;
-    private TypeMove type;
+    private MoveType type;
 
     // Normal Move
-    public Move(Piece myPiece, Location newLocation, TypeMove type) {
+    public Move(Piece myPiece, Location newLocation, MoveType type) {
         this.myPiece = myPiece;
         this.newLocation = newLocation;
         this.type = type;
     }
     // Kill Move
-    public Move(Piece myPiece, Piece enemyPiece, Location newLocation, TypeMove type) {
+    public Move(Piece myPiece, Piece enemyPiece, Location newLocation, MoveType type) {
         this.myPiece = myPiece;
         this.enemyPiece = enemyPiece;
         this.newLocation = newLocation;
@@ -35,7 +35,7 @@ public class Move {
         return newLocation;
     }
 
-    public TypeMove getType() {
+    public MoveType getType() {
         return type;
     }
 }

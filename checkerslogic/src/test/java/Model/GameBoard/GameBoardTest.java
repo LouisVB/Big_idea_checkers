@@ -1,84 +1,97 @@
 package Model.GameBoard;
 
+import Model.GameBoard.Type.MoveType;
 import Model.GameBoard.Type.PieceColor;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 class GameBoardTest {
     private static GameBoard testboard1;
 
-    private List<Move> moves;
+    private static List<Move> moves;
 
-    private Piece red1;
-    private Piece white1;
-    private Piece white2;
+    private static Piece red1;
+    private static Piece red2;
+    private static Piece white1;
+    private static Piece white2;
 
     @BeforeAll
-    static void setup(){
-         testboard1 = new GameBoard();
+    static void setup() {
+        //Empty GameBoard
+        testboard1 = new GameBoard();
+        testboard1.createBoardWithoutPieces();
+        //Pieces
+        red1 = new Piece(PieceColor.Red, new Location(2, 0));
+        red2 = new Piece(PieceColor.Red, new Location(6, 0));
+        white1 = new Piece(PieceColor.White, new Location(1, 1));
+        white2 = new Piece(PieceColor.White, new Location(3, 1));
+        //Place pieces on tile
+        testboard1.getGameBoard()[2][0].setPiece(red1);
+        testboard1.getGameBoard()[6][0].setPiece(red2);
+        testboard1.getGameBoard()[1][1].setPiece(white1);
+        testboard1.getGameBoard()[3][1].setPiece(white2);
+        //Move list
+        moves = new ArrayList<>();
     }
 
     @Test
-    void createBoard() {
-        //preperation
+    void createBoardTest() {
+        //Preparation
         GameBoard board = new GameBoard();
         board.createBoard();
-
         //Testing
         Assertions.assertEquals(24, board.getPieces().size(), "Total size of pieces on created board");
     }
 
     @Test
-    void getPieceMoves() {
-        red1 = new Piece(PieceColor.Red, new Location(2,0));
-        testboard1.getGameBoard()[2][0].setPiece(red1);
-
-        List<Move> moves = testboard1.getPieceMoves(red1);
-
+    static void getPieceMovesTest() {
+        moves = testboard1.getPieceMoves(red2);
+        //check list size
         Assertions.assertEquals(2, moves.size(), "total possible moves of certain piece");
+        //check move type
     }
 
     @Test
-    void getAllKillMoves() {
-        red1 = new Piece(PieceColor.Red, new Location(2,0));
-        white1 = new Piece(PieceColor.White, new Location(1,1));
-        white2 = new Piece(PieceColor.White, new Location(3,1));
-        testboard1.getGameBoard()[2][0].setPiece(red1);
-        testboard1.getGameBoard()[1][1].setPiece(white1);
-        testboard1.getGameBoard()[3][1].setPiece(white2);
-
-        List<Move> moves = testboard1.getAllKillMoves(PieceColor.Red);
-
+    static void getAllKillMovesTest() {
+        moves = testboard1.getAllKillMoves(PieceColor.Red);
         Assertions.assertEquals(2, moves.size(), "total possible moves of certain piece");
+        //check move type
     }
 
     @Test
     void isKillMovePossibleTrueTest() {
-        red1 = new Piece(PieceColor.Red, new Location(2,0));
-        white1 = new Piece(PieceColor.White, new Location(1,1));
-
-        testboard1.getGameBoard()[2][0].setPiece(red1);
-        testboard1.getGameBoard()[1][1].setPiece(white1);
-
         boolean isKillMove = testboard1.isKillMovePossible(PieceColor.Red);
-
-        Assertions.assertEquals(true, isKillMove, "total possible moves of certain piece");
+        Assertions.assertTrue(isKillMove);
     }
 
     @Test
-    void doMove() {
-        //insert Move
-        //check for new piece location
-
+    void doMoveNormalMoveTest() {
+        //create normal move
+        Move normalMove = new Move(red2, new Location(5, 1), MoveType.Normal);
+        //execute move
+        testboard1.doMove(normalMove);
+        //check new location
+        Assertions.assertEquals(0, red2.getLocation().getX(), "new x location red piece");
+        Assertions.assertEquals(2, red2.getLocation().getY(), "new y location red piece");
     }
 
     @Test
-    void removePiece() {
-
-
+    void doMoveKillMoveTest() {
+        //create kill move
+        Move killMove = new Move(red1, white1, new Location(0, 2), MoveType.Kill);
+        //execute move
+        testboard1.doMove(killMove);
+        //check new location
+        Assertions.assertEquals(0, red1.getLocation().getX(), "new x location red piece");
+        Assertions.assertEquals(2, red1.getLocation().getY(), "new y location red piece");
+        Assertions.assertEquals(red1, testboard1.getGameBoard()[0][2].getPiece(), "new y location red piece");
+        //check if white piece is removed
+        Assertions.assertFalse(testboard1.getGameBoard()[1][1].HasPiece());
     }
+
 }
