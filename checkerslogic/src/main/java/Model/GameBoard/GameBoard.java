@@ -66,8 +66,25 @@ public class GameBoard implements Interface.Board {
 
     @Override
     public List<Move> getPieceMoves(Piece piece) {
-
-        return null;
+        List<Move> result = new ArrayList<>();
+        //Loop by all existing pieces.
+                // x location move based on move dir
+                int killCheckY = piece.getLocation().getY() + piece.getColor().getMoveDir() * 1;
+                //try to find kill move and add to list
+                try {
+                    for (int i = 0; i < 2; i++) {
+                        int killCheckX = (i == 1) ? piece.getLocation().getX() - 2 : piece.getLocation().getX() + 2;
+                        Move NewMove = tryMove(piece, new Location(killCheckX, killCheckY));
+                        if (NewMove.getType() == MoveType.KILL) {
+                            result.add(new Move(piece, NewMove.getEnemyPiece(), new Location(killCheckX, killCheckY), NewMove.getType()));
+                        }
+                    }
+                } catch (IndexOutOfBoundsException e) {
+                    System.out.println("Out of bounds");
+                } catch (Exception e) {
+                    System.out.println("Exception occurred");
+                }
+        return result;
     }
 
     @Override
