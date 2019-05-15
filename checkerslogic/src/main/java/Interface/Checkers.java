@@ -1,5 +1,7 @@
 package Interface;
 
+import Model.GameBoard.Type.PieceColor;
+
 public interface Checkers {
 
     void registerPlayer(String name, String password);
@@ -15,5 +17,7 @@ public interface Checkers {
     void getMovePiece();
 
     void useMove();
+
+    boolean isKillMovePossible(PieceColor color);
 
 }

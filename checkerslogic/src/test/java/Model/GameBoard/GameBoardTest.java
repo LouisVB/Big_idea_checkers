@@ -45,6 +45,13 @@ class GameBoardTest {
     }
 
     @Test
+    void getAllKillMovesTest() {
+        moves = testboard1.getAllKillMoves(PieceColor.Red);
+        Assertions.assertEquals(2, moves.size(), "total possible moves of certain piece");
+        //check move type
+    }
+
+    @Test
     void createBoardTest() {
         //Preparation
         GameBoard board = new GameBoard();
@@ -62,27 +69,17 @@ class GameBoardTest {
     }
 
     @Test
-    void getAllKillMovesTest() {
-        moves = testboard1.getAllKillMoves(PieceColor.Red);
-        Assertions.assertEquals(2, moves.size(), "total possible moves of certain piece");
-        //check move type
-    }
-
-    @Test
-    void isKillMovePossibleTrueTest() {
-        boolean isKillMove = testboard1.isKillMovePossible(PieceColor.Red);
-        Assertions.assertTrue(isKillMove);
-    }
-
-    @Test
     void doMoveNormalMoveTest() {
         //create normal move
         Move normalMove = new Move(red2, new Location(5, 1), MoveType.NORMAL);
         //execute move
         testboard1.doMove(normalMove);
         //check new location
-        Assertions.assertEquals(0, red2.getLocation().getX(), "new x location red piece");
-        Assertions.assertEquals(2, red2.getLocation().getY(), "new y location red piece");
+        Assertions.assertEquals(5, red2.getLocation().getX(), "new x location red piece");
+        Assertions.assertEquals(1, red2.getLocation().getY(), "new y location red piece");
+        Assertions.assertFalse(testboard1.getGameBoard()[6][0].HasPiece());
+        Assertions.assertTrue(testboard1.getGameBoard()[5][1].HasPiece());
+
     }
 
     @Test
