@@ -1,5 +1,10 @@
 package Logic;
 
+import Model.GameBoard.Move;
+import Model.GameBoard.Type.PieceColor;
+
+import java.util.List;
+
 public class Checkers implements Interface.Checkers {
 
     @Override
@@ -13,9 +18,10 @@ public class Checkers implements Interface.Checkers {
     }
 
     @Override
-    public void gameEnded() {
-
+    public PieceColor gameEnded() {
+        return null;
     }
+
 
     @Override
     public void surrender(int playerNumber) {
@@ -28,12 +34,18 @@ public class Checkers implements Interface.Checkers {
     }
 
     @Override
-    public void getMovePiece() {
-
+    public List<Move> getMovePiece() {
+        return null;
     }
+
 
     @Override
     public void useMove() {
 
+    }
+
+    @Override
+    public boolean isKillMovePossible(PieceColor color) {
+        return false;
     }
 }

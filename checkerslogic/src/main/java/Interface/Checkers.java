@@ -1,6 +1,9 @@
 package Interface;
 
+import Model.GameBoard.Move;
 import Model.GameBoard.Type.PieceColor;
+
+import java.util.List;
 
 public interface Checkers {
 
@@ -8,13 +11,13 @@ public interface Checkers {
 
     void startGame(int playerNumber);
 
-    void gameEnded();
+    PieceColor gameEnded();
 
     void surrender(int playerNumber);
 
     void rematch();
 
-    void getMovePiece();
+    List<Move> getMovePiece();
 
     void useMove();
 

@@ -3,6 +3,7 @@ package Model.GameBoard;
 import Model.GameBoard.Type.MoveType;
 import Model.GameBoard.Type.PieceColor;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
@@ -10,17 +11,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 class GameBoardTest {
-    private static GameBoard testboard1;
+    private GameBoard testboard1;
 
-    private static List<Move> moves;
+    private  List<Move> moves;
 
-    private static Piece red1;
-    private static Piece red2;
-    private static Piece white1;
-    private static Piece white2;
+    private  Piece red1;
+    private  Piece red2;
+    private  Piece white1;
+    private  Piece white2;
 
-    @BeforeAll
-    static void setup() {
+    @BeforeEach
+     void setup() {
         //Empty GameBoard
         testboard1 = new GameBoard();
         testboard1.createBoardWithoutPieces();
