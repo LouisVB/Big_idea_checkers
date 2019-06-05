@@ -16,9 +16,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @ServerEndpoint(value = "/greeter/")
-public class GreeterEndpoint {
+public class GameEndPoint {
 
-    private static final Logger log = LoggerFactory.getLogger(GreeterEndpoint.class);
+    private static final Logger log = LoggerFactory.getLogger(GameEndPoint.class);
     private static final List<Session> sessions = new ArrayList<>();
 
     @OnOpen

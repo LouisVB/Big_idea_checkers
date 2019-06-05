@@ -1,7 +1,7 @@
 package nl.fhict.s3.websocketserver;
 
 import javax.websocket.server.ServerContainer;
-import nl.fhict.s3.websocketserver.endpoint.GreeterEndpoint;
+import nl.fhict.s3.websocketserver.endpoint.GameEndPoint;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.servlet.ServletContextHandler;
@@ -36,7 +36,7 @@ public class WebsocketServer {
                 .configureContext(webSocketContext);
             log.info("Initialize javax.websocket layer");
 
-            serverContainer.addEndpoint(GreeterEndpoint.class);
+            serverContainer.addEndpoint(GameEndPoint.class);
             log.info("Endpoint added");
 
             webSocketServer.start();
