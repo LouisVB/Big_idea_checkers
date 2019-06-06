@@ -14,6 +14,9 @@ public class Piece {
         isKing = false;
     }
 
+    public Piece() {
+    }
+
     public PieceColor getColor() {
         return color;
     }

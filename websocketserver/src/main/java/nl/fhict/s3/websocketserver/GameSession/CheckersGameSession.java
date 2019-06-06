@@ -1,11 +1,20 @@
-package Logic;
+package nl.fhict.s3.websocketserver.GameSession;
 
+import Interface.Checkers;
+import Model.GameBoard.GameBoard;
 import Model.GameBoard.Move;
 import Model.GameBoard.Type.PieceColor;
+import Model.Player;
 
 import java.util.List;
 
-public class Checkers implements Interface.Checkers {
+
+public class CheckersGameSession implements Checkers {
+
+    private List<Player> Players;
+    private GameBoard gameBoard;
+    private Player Currentplayer;
+
 
     @Override
     public void registerPlayer(String name, String password) {
@@ -22,7 +31,6 @@ public class Checkers implements Interface.Checkers {
         return null;
     }
 
-
     @Override
     public void surrender(int playerNumber) {
 
@@ -38,7 +46,6 @@ public class Checkers implements Interface.Checkers {
         return null;
     }
 
-
     @Override
     public void useMove() {
 
@@ -48,4 +55,16 @@ public class Checkers implements Interface.Checkers {
     public boolean isKillMovePossible(PieceColor color) {
         return false;
     }
+    // to start game
+    private boolean canStartGame() {
+        if(Players.size() == 2){
+            return true;
+        }
+        return false;
+    }
+    //check if player can surrender
+    private boolean canSurrender() {
+        return false;
+    }
+
 }

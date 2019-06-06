@@ -25,16 +25,6 @@ public interface Board {
     /**
      *
      */
-    boolean isKillMovePossible(PieceColor color);
-
-    /**
-     *
-     */
     void doMove(Move nextMove);
-
-    /**
-     *
-     */
-    void removePiece(Piece piece);
 
 }

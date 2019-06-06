@@ -2,8 +2,7 @@ package nl.fhict.s3.websocketclient;
 
 import java.util.Observable;
 import java.util.Observer;
-import nl.fhict.s3.websocketclient.endpoint.GreeterClientEndpoint;
-import nl.fhict.s3.websocketshared.Greeting;
+import nl.fhict.s3.websocketclient.endpoint.GameClientEndPoint;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,14 +12,14 @@ public class WebsocketClient implements Observer {
 
     void start() {
         try {
-            GreeterClientEndpoint greeterClientEndpoint = GreeterClientEndpoint.getInstance();
-            greeterClientEndpoint.addObserver(this);
-            greeterClientEndpoint.start();
+            GameClientEndPoint gameClientEndPoint = GameClientEndPoint.getInstance();
+            gameClientEndPoint.addObserver(this);
+            gameClientEndPoint.start();
             log.info("Websocket client started");
 
-            greeterClientEndpoint.sendMessageToServer(new Greeting("Whoohoo", 50));
+           // gameClientEndPoint.sendMessageToServer(new Greeting("Whoohoo", 50));
 
-            greeterClientEndpoint.stop();
+            gameClientEndPoint.stop();
             log.info("Websocket client stopped");
         } catch (Exception ex) {
             log.error("Client couldn't start.");

@@ -11,14 +11,13 @@ import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
-import nl.fhict.s3.websocketshared.Greeting;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@ServerEndpoint(value = "/greeter/")
-public class GreeterEndpoint {
+@ServerEndpoint(value = "/checkers/")
+public class GameEndPoint {
 
-    private static final Logger log = LoggerFactory.getLogger(GreeterEndpoint.class);
+    private static final Logger log = LoggerFactory.getLogger(GameEndPoint.class);
     private static final List<Session> sessions = new ArrayList<>();
 
     @OnOpen
@@ -50,11 +49,11 @@ public class GreeterEndpoint {
         Gson gson = new Gson();
         log.info("Session ID: {} Handling message: {}", session.getId(), jsonMessage);
 
-        try {
-            Greeting message = gson.fromJson(jsonMessage, Greeting.class);
-            log.info("Session ID: {} Message handled: {}", session.getId(), message);
-        } catch (JsonSyntaxException ex) {
-            log.error("Can't process message: {0}", ex);
-        }
+//        try {
+//            Greeting message = gson.fromJson(jsonMessage, Greeting.class);
+//            log.info("Session ID: {} Message handled: {}", session.getId(), message);
+//        } catch (JsonSyntaxException ex) {
+//            log.error("Can't process message: {0}", ex);
+//        }
     }
 }
