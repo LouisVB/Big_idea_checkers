@@ -16,29 +16,28 @@ import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.WebSocketContainer;
-import nl.fhict.s3.websocketshared.Greeting;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @ClientEndpoint
-public class GreeterClientEndpoint extends Observable {
+public class GameClientEndPoint extends Observable {
 
-    private static final Logger log = LoggerFactory.getLogger(GreeterClientEndpoint.class);
-    private static GreeterClientEndpoint instance = null;
-    private static final String URI = "ws://localhost:8095/greeter/"; // TODO Config file
+    private static final Logger log = LoggerFactory.getLogger(GameClientEndPoint.class);
+    private static GameClientEndPoint instance = null;
+    private static final String URI = "ws://localhost:8095/checkers/"; // TODO Config file
     private Session session;
     private Gson gson;
     private boolean isRunning = false;
     private String message;
 
-    private GreeterClientEndpoint() {
+    private GameClientEndPoint() {
         gson = new Gson();
     }
 
-    public static GreeterClientEndpoint getInstance() {
+    public static GameClientEndPoint getInstance() {
         if (instance == null) {
-            instance = new GreeterClientEndpoint();
-            log.info("GreeterClientEndpoint singleton instantiated");
+            instance = new GameClientEndPoint();
+            log.info("GameClientEndPoint singleton instantiated");
         }
         return instance;
     }
@@ -80,12 +79,12 @@ public class GreeterClientEndpoint extends Observable {
         log.info("Client close session {} for reason {} ", session.getRequestURI(), reason);
         session = null;
     }
-
-    public void sendMessageToServer(Greeting message) {
-        String jsonMessage = gson.toJson(message);
-        log.info("Sending message to server: {}", message);
-        session.getAsyncRemote().sendText(jsonMessage);
-    }
+//
+//    public void sendMessageToServer(Greeting message) {
+//        String jsonMessage = gson.toJson(message);
+//        log.info("Sending message to server: {}", message);
+//        session.getAsyncRemote().sendText(jsonMessage);
+//    }
 
     private void startClient() {
         try {
@@ -109,27 +108,27 @@ public class GreeterClientEndpoint extends Observable {
     }
 
     private void processMessage(String jsonMessage) {
-        Greeting greeting;
-        log.info("Processing message: {}", jsonMessage);
-
-        try {
-            greeting = gson.fromJson(jsonMessage, Greeting.class);
-            log.info("Message processed: {}", greeting);
-        } catch (JsonSyntaxException ex) {
-            log.error("Can't process message: {}", ex.getMessage());
-            return;
-        }
-
-        String content = greeting.getName();
-        if (content == null || "".equals(content)) {
-            log.error("Message is empty");
-            return;
-        }
-
-        Greeting commMessage = new Greeting();
-        commMessage.setName(content);
-
-        this.setChanged();
-        this.notifyObservers(commMessage);
+//        Greeting greeting;
+//        log.info("Processing message: {}", jsonMessage);
+//
+//        try {
+//            greeting = gson.fromJson(jsonMessage, Greeting.class);
+//            log.info("Message processed: {}", greeting);
+//        } catch (JsonSyntaxException ex) {
+//            log.error("Can't process message: {}", ex.getMessage());
+//            return;
+//        }
+//
+//        String content = greeting.getName();
+//        if (content == null || "".equals(content)) {
+//            log.error("Message is empty");
+//            return;
+//        }
+//
+//        Greeting commMessage = new Greeting();
+//        commMessage.setName(content);
+//
+//        this.setChanged();
+//        this.notifyObservers(commMessage);
     }
 }

@@ -1,4 +1,4 @@
-package nl.fhict.s3.websocketserver.logic;
+package nl.fhict.s3.websocketserver.GameSession;
 
 import Interface.Checkers;
 import Model.GameBoard.GameBoard;
