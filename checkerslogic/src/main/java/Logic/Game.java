@@ -84,7 +84,11 @@ public class Game implements Checkers {
     }
 
     public void ChangeTurn () {
-
+        for (Player player : Players) {
+            if(player != CurrentPlayerAtTurn){
+                CurrentPlayerAtTurn = player;
+            }
+        }
     }
 
 
