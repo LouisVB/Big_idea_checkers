@@ -13,6 +13,12 @@ public class Tile {
         location = new Location(x,y);
     }
 
+    public Tile(Piece piece, TileColor color, Location location) {
+        this.piece = piece;
+        this.color = color;
+        this.location = location;
+    }
+
     public boolean HasPiece() {
       return piece != null;
     }

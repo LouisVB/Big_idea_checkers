@@ -1,26 +1,24 @@
 package Interface;
 
 import Model.GameBoard.Move;
+import Model.GameBoard.Piece;
 import Model.GameBoard.Type.PieceColor;
+import Model.Player;
 
 import java.util.List;
 
 public interface Checkers {
 
-    void registerPlayer(String name, String password);
+    void newPlayer(Player player);
 
-    void startGame(int playerNumber);
+    void startGame();
 
-    PieceColor gameEnded();
+    List<Move> getMovePiece(Piece piece);
 
-    void surrender(int playerNumber);
-
-    void rematch();
-
-    List<Move> getMovePiece();
-
-    void useMove();
+    void useMove( Move move );
 
     boolean isKillMovePossible(PieceColor color);
+
+    Player gameEnded();
 
 }
