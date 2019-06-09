@@ -24,7 +24,7 @@ import java.util.List;
 public class CheckersController extends Application {
 
     private GameBoard Checkersboard;
-    private List<Move> possibleMoves = new ArrayList<>();
+    private List<Move> possibleMoves;
 
     // fxml buttons
     @FXML
@@ -39,6 +39,13 @@ public class CheckersController extends Application {
     public void initialize() {
         Checkersboard = new GameBoard();
         Checkersboard.createBoard();
+        possibleMoves = new ArrayList<>();
+        fillRaster(GameBoard, Checkersboard.getGameBoard());
+
+    }
+
+    private void refreshUI(){
+        GameBoard.getChildren().clear();
         fillRaster(GameBoard, Checkersboard.getGameBoard());
     }
 
@@ -62,13 +69,6 @@ public class CheckersController extends Application {
         //check and set color
         tile.setFill(Tile.getColor() == TileColor.WHITE ? Color.valueOf("#fff") : Color.valueOf("#303030"));
 
-        if (Tile.HasPiece()) tile.addEventHandler(MouseEvent.MOUSE_PRESSED,
-                new EventHandler<MouseEvent>() {
-                    @Override
-                    public void handle(MouseEvent event) {
-                        pieceSelected(event, Tile.getPiece());
-                    }
-                });
         return tile;
     }
 
@@ -95,14 +95,23 @@ public class CheckersController extends Application {
         ellipse.setTranslateX(10);
         ellipse.setTranslateY(0);
 
+        ellipse.addEventHandler(MouseEvent.MOUSE_PRESSED,
+                new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        pieceSelected(event, piece);
+                    }
+                });
+
         return ellipse;
     }
 
-    private Ellipse createPossiblemove(Move move) {
-        Ellipse ellipse = new Ellipse(62 * 0.3125, 62 * 0.26);
+    private Ellipse createPossibleMove(Move move) {
+        Ellipse ellipse = new Ellipse(62 * 0.3125, 62 * 0.3125);
+        ellipse.setFill(Color.valueOf("#303030"));
         ellipse.setStroke(move.getMyPiece().getColor() == PieceColor.Red
-                ? Color.valueOf("#A80000") : Color.valueOf("#fff9f4"));
-        ellipse.setStrokeWidth(62 * 0.03);
+                ? Color.valueOf("#A80000") : Color.valueOf("#fff9f4"));;
+        ellipse.setStrokeWidth(3);
         ellipse.setTranslateX(10);
         ellipse.setTranslateY(0);
 
@@ -113,7 +122,6 @@ public class CheckersController extends Application {
                         possibleMoveSelected(event, move);
                     }
                 });
-
         return ellipse;
     }
 
@@ -129,8 +137,8 @@ public class CheckersController extends Application {
                 }
                 if(!possibleMoves.isEmpty()) {
                     for (Move move : possibleMoves) {
-                        if(move.getNewLocation() == new Location(x,y)){
-                            pane.add(createPossiblemove(move), x, y);
+                        if (move.getNewLocation().getX() == x && move.getNewLocation().getY() == y ) {
+                            pane.add(createPossibleMove(move), x, y);
                         }
                     }
                 }
@@ -140,11 +148,13 @@ public class CheckersController extends Application {
 
     private void pieceSelected(MouseEvent event, Piece piece) {
         possibleMoves = Checkersboard.getPieceMoves(piece);
+        refreshUI();
     }
 
     private void possibleMoveSelected(MouseEvent event, Move move) {
         possibleMoves.clear();
         Checkersboard.doMove(move);
+        refreshUI();
     }
 
     //Checks user user account and checks for single or multilayer.
