@@ -1,6 +1,7 @@
 package Interface;
 
 import Model.GameBoard.Move;
+import Model.GameBoard.Piece;
 import Model.GameBoard.Type.PieceColor;
 import Model.Player;
 
@@ -12,7 +13,7 @@ public interface Checkers {
 
     void startGame();
 
-    List<Move> getMovePiece();
+    List<Move> getMovePiece(Piece piece);
 
     void useMove( Move move );
 
