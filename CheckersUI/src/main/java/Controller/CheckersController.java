@@ -16,12 +16,15 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import nl.fhict.s3.websocketclient.Client;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
-public class CheckersController extends Application {
+public class CheckersController extends Application implements Observer {
 
     private GameBoard Checkersboard;
     private List<Move> possibleMoves;
@@ -37,6 +40,8 @@ public class CheckersController extends Application {
 
     @FXML
     public void initialize() {
+        Client.getInstance().addObserver(this);
+        Client.getInstance().setViewController(this);
         Checkersboard = new GameBoard();
         Checkersboard.createBoard();
         possibleMoves = new ArrayList<>();
@@ -166,4 +171,8 @@ public class CheckersController extends Application {
     }
 
 
+    @Override
+    public void update(Observable o, Object arg) {
+
+    }
 }

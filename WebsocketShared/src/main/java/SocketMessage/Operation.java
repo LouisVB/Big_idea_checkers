@@ -1,4 +1,4 @@
-package nl.fhict.s3.websocketserver.SocketMessage;
+package SocketMessage;
 
 public enum Operation {
     CONNECT, REGISTERPLAYER, STARTGAME, GETMOVES, USEMOVE, CHANGETURN, SURRENDER

@@ -20,6 +20,8 @@ public class Game implements Checkers {
 
 
     public Game() {
+        gameBoard = new GameBoard();
+        gameBoard.createBoardWithoutPieces();
         CurrentPlayerAtTurn = null;
         isGameStarted = false;
 
@@ -54,6 +56,7 @@ public class Game implements Checkers {
     @Override
     public void startGame() {
         gameBoard = new GameBoard();
+        gameBoard.createBoard();
         isGameStarted = true;
 
     }
