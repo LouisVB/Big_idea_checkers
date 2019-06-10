@@ -1,33 +1,108 @@
 package nl.fhict.s3.websocketclient;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Observable;
-import java.util.Observer;
-import nl.fhict.s3.websocketclient.endpoint.GameClientEndPoint;
+import SocketMessage.SocketMessage;
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class WebsocketClient implements Observer {
+import javax.websocket.*;
+
+public class WebsocketClient extends Observable {
 
     private static final Logger log = LoggerFactory.getLogger(WebsocketClient.class);
+    private static WebsocketClient instance = null;
+    private static final String URI = "ws://localhost:8095/checkers/";
+    private Session session;
+    private Gson gson;
+    public boolean isRunning = false;
+    private String message;
 
-    void start() {
+    private WebsocketClient() {
+        gson = new Gson();
+    }
+
+    public static WebsocketClient getInstance() {
+        if (instance == null) {
+            instance = new WebsocketClient();
+            log.info("GameClientEndPoint singleton instantiated");
+        }
+        return instance;
+    }
+
+    @OnOpen
+    public void onWebSocketConnect(Session session) {
+        log.info("Client open session {}", session.getRequestURI());
+        this.session = session;
+    }
+
+    @OnMessage
+    public void onWebSocketText(String message, Session session) {
+        this.message = message;
+        log.info("Client message received {}", message);
+        processMessage();
+    }
+
+    @OnError
+    public void onWebSocketError(Session session, Throwable cause) {
+        log.info("Client connection error {}", cause.toString());
+    }
+
+    @OnClose
+    public void onWebSocketClose(CloseReason reason) {
+        log.info("Client close session {} for reason {} ", session.getRequestURI(), reason);
+        session = null;
+    }
+
+
+    public void connect() {
         try {
-            GameClientEndPoint gameClientEndPoint = GameClientEndPoint.getInstance();
-            gameClientEndPoint.addObserver(this);
-            gameClientEndPoint.start();
-            log.info("Websocket client started");
+            WebSocketContainer container = ContainerProvider.getWebSocketContainer();
+            container.connectToServer(this, new URI(URI));
+            log.info("Connected to server at {}", URI);
 
-           // gameClientEndPoint.sendMessageToServer(new Greeting("Whoohoo", 50));
-
-            gameClientEndPoint.stop();
-            log.info("Websocket client stopped");
-        } catch (Exception ex) {
-            log.error("Client couldn't start.");
+        } catch (IOException | URISyntaxException | DeploymentException ex) {
+            log.error("Error in startClient: {}", ex.getMessage());
         }
     }
 
-    @Override
-    public void update(Observable o, Object arg) {
-        log.info("Update called. {}", arg);
+    private void stopClient() {
+        try {
+            session.close();
+            log.info("Session closed");
+
+        } catch (IOException ex) {
+            log.error("Error in stopClient {}", ex.getMessage());
+        }
     }
+
+    private void processMessage()
+    {
+        SocketMessage responseMessage;
+        log.info("Processing message: {}", message);
+        try
+        {
+            responseMessage = gson.fromJson(message, SocketMessage.class);
+            this.setChanged();
+            this.notifyObservers(responseMessage);
+        }
+        catch (JsonSyntaxException ex)
+        {
+            log.error("Can't process message: {}", ex.getMessage());
+        }
+    }
+
+
+//
+//    public void SendMove(int playerNr, MoveType moveType)
+//    {
+//        Request requestMessage = packager.move(moveType);
+//    }
+
+
+
 }

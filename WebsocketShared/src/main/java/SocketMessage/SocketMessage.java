@@ -1,4 +1,4 @@
-package nl.fhict.s3.websocketserver.SocketMessage;
+package SocketMessage;
 
 public class SocketMessage {
     private Operation operation;

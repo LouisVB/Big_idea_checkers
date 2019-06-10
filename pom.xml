@@ -18,6 +18,7 @@
     <module>restshared</module>
       <module>checkerslogic</module>
       <module>CheckersUI</module>
+      <module>WebsocketShared</module>
   </modules>
 
   <name>jetty-starter</name>
