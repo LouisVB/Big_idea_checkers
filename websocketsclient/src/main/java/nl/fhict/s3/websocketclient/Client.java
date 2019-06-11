@@ -3,6 +3,9 @@ package nl.fhict.s3.websocketclient;
 import nl.fhict.s3.websocketclient.Controller.CheckersController;
 import Logic.Game;
 import Model.Player;
+import nl.fhict.s3.websocketclient.Interface.Command;
+import nl.fhict.s3.websocketclient.SocketMessage.Factory;
+import nl.fhict.s3.websocketclient.SocketMessage.SocketMessage;
 
 
 import java.util.List;
@@ -43,8 +46,13 @@ public class Client extends Observable implements Observer {
         this.CheckersUIController = viewController;
     }
 
-    public Client() {
+    public Game getGame() {
+        return game;
+    }
 
+    public Client() {
+        game = new Game();
+        game.startGame();
     }
 
     public void setPlayers(List<Player> players) {
@@ -68,11 +76,18 @@ public class Client extends Observable implements Observer {
     }
 
 
-
-
-
     @Override
     public void update(Observable o, Object arg) {
-
+        if (arg.getClass() == SocketMessage.class) {
+            SocketMessage response = (SocketMessage) arg;
+            Factory factory = new Factory();
+            Command cmd = factory.getCommand(response.getOperation().toString());
+            if (cmd != null) {
+                cmd.execute(response);
+            } else {
+                System.out.println("The command " + response.getOperation().toString() + " is not found.");
+            }
+        }
     }
+
 }

@@ -56,17 +56,9 @@ public class CheckersController extends Application implements Observer {
     public void initialize() {
         Client.getInstance().addObserver(this);
         Client.getInstance().setViewController(this);
-//        Checkersboard = new GameBoard();
-//        Checkersboard.createBoard();
         possibleMoves = new ArrayList<>();
-//        fillRaster(GameBoard, Checkersboard.getGameBoard());
-
+        setupUi(Client.getInstance().getGame());
     }
-
-//    private void refreshUI(){
-//        GameBoard.getChildren().clear();
-//        fillRaster(GameBoard, Checkersboard.getGameBoard());
-//    }
 
 
     private Rectangle createTiles(Tile Tile) {
@@ -143,20 +135,22 @@ public class CheckersController extends Application implements Observer {
                     pane.add(createPieceBackground(), x, y);
                     pane.add(createPiece(board[x][y].getPiece()), x, y);
                 }
-                if(!possibleMoves.isEmpty()) {
-                    for (Move move : possibleMoves) {
-                        if (move.getNewLocation().getX() == x && move.getNewLocation().getY() == y ) {
-                            pane.add(createPossibleMove(move), x, y);
-                        }
-                    }
-                }
+//                if(!possibleMoves.isEmpty()) {
+//                    for (Move move : possibleMoves) {
+//                        if (move.getNewLocation().getX() == x && move.getNewLocation().getY() == y ) {
+//                            pane.add(createPossibleMove(move), x, y);
+//                        }
+//                    }
+//                }
             }
         }
     }
 
     private void pieceSelected(MouseEvent event, Piece piece) {
-        possibleMoves = Checkersboard.getPieceMoves(piece);
-//        refreshUI();
+        possibleMoves = Client.getInstance().getGame().getGameBoard().getPieceMoves(piece);
+        for (Move move : possibleMoves) {
+                            GameBoard.add(createPossibleMove(move), move.getNewLocation().getX(), move.getNewLocation().getY());
+                    }
     }
 
     private void possibleMoveSelected(MouseEvent event, Move move) {
@@ -167,9 +161,10 @@ public class CheckersController extends Application implements Observer {
 
     //Checks user user account and checks for single or multilayer.
     public void connectToSession(MouseEvent mouseEvent) {
-        String name = Name.getText();
-        String password = Password.getText();
+//        String name = Name.getText();
+//        String password = Password.getText();
 
+        Client.getInstance().connect();
 
     }
 

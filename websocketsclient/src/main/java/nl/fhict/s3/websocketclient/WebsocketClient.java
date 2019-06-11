@@ -27,7 +27,7 @@ public class WebsocketClient extends Observable {
 
     private WebsocketClient() {
 //        gson = new Gson();
-          requestPackager = new RequestPackager();
+//        requestPackager = new RequestPackager();
     }
 
     public static WebsocketClient getInstance() {
@@ -99,14 +99,5 @@ public class WebsocketClient extends Observable {
             log.error("Can't process message: {}", ex.getMessage());
         }
     }
-
-
-//
-//    public void SendMove(int playerNr, MoveType moveType)
-//    {
-//        Request requestMessage = packager.move(moveType);
-//    }
-
-
 
 }

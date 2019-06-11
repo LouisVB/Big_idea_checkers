@@ -13,6 +13,7 @@ public class Factory {
     {
         commands = new HashMap<>();
         commands.put(new RegisterPlayer().getName(), new RegisterPlayer());
+        commands.put(new Connect().getName(), new Connect());
 
     }
 
