@@ -4,9 +4,11 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Observable;
-import SocketMessage.SocketMessage;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
+import nl.fhict.s3.websocketclient.SocketMessage.RequestPackager;
+import nl.fhict.s3.websocketclient.SocketMessage.SocketMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,9 +23,11 @@ public class WebsocketClient extends Observable {
     private Gson gson;
     public boolean isRunning = false;
     private String message;
+    private RequestPackager requestPackager;
 
     private WebsocketClient() {
-        gson = new Gson();
+//        gson = new Gson();
+          requestPackager = new RequestPackager();
     }
 
     public static WebsocketClient getInstance() {

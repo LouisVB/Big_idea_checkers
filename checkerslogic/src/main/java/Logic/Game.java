@@ -53,6 +53,10 @@ public class Game implements Checkers {
        }
     }
 
+    public void setPlayers(List<Player> players) {
+        Players = players;
+    }
+
     @Override
     public void startGame() {
         gameBoard = new GameBoard();

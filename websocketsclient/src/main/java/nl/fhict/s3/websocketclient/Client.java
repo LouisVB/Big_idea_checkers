@@ -1,8 +1,11 @@
 package nl.fhict.s3.websocketclient;
 
-import Controller.CheckersController;
+import nl.fhict.s3.websocketclient.Controller.CheckersController;
 import Logic.Game;
 import Model.Player;
+
+
+import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -44,6 +47,11 @@ public class Client extends Observable implements Observer {
 
     }
 
+    public void setPlayers(List<Player> players) {
+        game.setPlayers(players);
+    }
+
+
     public void connect() {
         if (!websocketClient.isRunning) {
             websocketClient.addObserver(this);
@@ -58,6 +66,9 @@ public class Client extends Observable implements Observer {
         setChanged();
         notifyObservers(game);
     }
+
+
+
 
 
     @Override

@@ -1,8 +1,10 @@
-package Controller;
+package nl.fhict.s3.websocketclient.Controller;
 
+import Logic.Game;
 import Model.GameBoard.*;
 import Model.GameBoard.Type.*;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +19,7 @@ import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import nl.fhict.s3.websocketclient.Client;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -37,23 +40,6 @@ public class CheckersController extends Application implements Observer {
     @FXML
     public GridPane GameBoard;
 
-
-    @FXML
-    public void initialize() {
-        Client.getInstance().addObserver(this);
-        Client.getInstance().setViewController(this);
-        Checkersboard = new GameBoard();
-        Checkersboard.createBoard();
-        possibleMoves = new ArrayList<>();
-        fillRaster(GameBoard, Checkersboard.getGameBoard());
-
-    }
-
-    private void refreshUI(){
-        GameBoard.getChildren().clear();
-        fillRaster(GameBoard, Checkersboard.getGameBoard());
-    }
-
     @Override
     public void start(Stage primaryStage) {
         try {
@@ -65,6 +51,23 @@ public class CheckersController extends Application implements Observer {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    public void initialize() {
+        Client.getInstance().addObserver(this);
+        Client.getInstance().setViewController(this);
+//        Checkersboard = new GameBoard();
+//        Checkersboard.createBoard();
+        possibleMoves = new ArrayList<>();
+//        fillRaster(GameBoard, Checkersboard.getGameBoard());
+
+    }
+
+//    private void refreshUI(){
+//        GameBoard.getChildren().clear();
+//        fillRaster(GameBoard, Checkersboard.getGameBoard());
+//    }
+
 
     private Rectangle createTiles(Tile Tile) {
         //create Tile
@@ -153,13 +156,13 @@ public class CheckersController extends Application implements Observer {
 
     private void pieceSelected(MouseEvent event, Piece piece) {
         possibleMoves = Checkersboard.getPieceMoves(piece);
-        refreshUI();
+//        refreshUI();
     }
 
     private void possibleMoveSelected(MouseEvent event, Move move) {
         possibleMoves.clear();
         Checkersboard.doMove(move);
-        refreshUI();
+//        refreshUI();
     }
 
     //Checks user user account and checks for single or multilayer.
@@ -170,9 +173,19 @@ public class CheckersController extends Application implements Observer {
 
     }
 
+    private void setupUi(Game gameLogic)
+    {
+        fillRaster(GameBoard, gameLogic.getGameBoard().getGameBoard());
+    }
 
     @Override
-    public void update(Observable o, Object arg) {
-
+    public void update(Observable o, Object arg)
+    {
+        if (Game.class.isAssignableFrom(arg.getClass()))
+        {
+            Platform.runLater(() -> setupUi((Game) arg));
+        }
     }
+
+
 }
