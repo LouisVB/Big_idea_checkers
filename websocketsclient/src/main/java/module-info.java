@@ -11,5 +11,6 @@ module websocketsclient {
     requires javax.websocket.client.api;
 
     exports nl.fhict.s3.websocketclient.Controller;
+    exports nl.fhict.s3.websocketclient;
 
 }

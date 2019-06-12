@@ -14,7 +14,9 @@ import org.slf4j.LoggerFactory;
 
 import javax.websocket.*;
 
-public class WebsocketClient extends Observable {
+
+@ClientEndpoint
+public class WebsocketClient extends Observable  {
 
     private static final Logger log = LoggerFactory.getLogger(WebsocketClient.class);
     private static WebsocketClient instance = null;
