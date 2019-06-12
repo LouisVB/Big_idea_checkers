@@ -135,28 +135,25 @@ public class CheckersController extends Application implements Observer {
                     pane.add(createPieceBackground(), x, y);
                     pane.add(createPiece(board[x][y].getPiece()), x, y);
                 }
-//                if(!possibleMoves.isEmpty()) {
-//                    for (Move move : possibleMoves) {
-//                        if (move.getNewLocation().getX() == x && move.getNewLocation().getY() == y ) {
-//                            pane.add(createPossibleMove(move), x, y);
-//                        }
-//                    }
-//                }
+                if(!possibleMoves.isEmpty()) {
+                    for (Move move : possibleMoves) {
+                        if (move.getNewLocation().getX() == x && move.getNewLocation().getY() == y ) {
+                            pane.add(createPossibleMove(move), x, y);
+                        }
+                    }
+                }
             }
         }
     }
 
     private void pieceSelected(MouseEvent event, Piece piece) {
         possibleMoves = Client.getInstance().getGame().getGameBoard().getPieceMoves(piece);
-        for (Move move : possibleMoves) {
-                            GameBoard.add(createPossibleMove(move), move.getNewLocation().getX(), move.getNewLocation().getY());
-                    }
+        fillRaster(GameBoard, Client.getInstance().getGame().getGameBoard().getGameBoard());
     }
 
     private void possibleMoveSelected(MouseEvent event, Move move) {
         possibleMoves.clear();
-        Checkersboard.doMove(move);
-//        refreshUI();
+        Client.getInstance().SubmitMove(move);
     }
 
     //Checks user user account and checks for single or multilayer.

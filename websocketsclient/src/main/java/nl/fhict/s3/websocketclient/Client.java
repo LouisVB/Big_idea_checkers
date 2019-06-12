@@ -1,10 +1,13 @@
 package nl.fhict.s3.websocketclient;
 
+import Model.GameBoard.Move;
+import com.google.gson.Gson;
 import nl.fhict.s3.websocketclient.Controller.CheckersController;
 import Logic.Game;
 import Model.Player;
 import nl.fhict.s3.websocketclient.Interface.Command;
 import nl.fhict.s3.websocketclient.SocketMessage.Factory;
+import nl.fhict.s3.websocketclient.SocketMessage.RequestPackager;
 import nl.fhict.s3.websocketclient.SocketMessage.SocketMessage;
 
 
@@ -24,6 +27,7 @@ public class Client extends Observable implements Observer {
     }
 
     //
+    private RequestPackager requestPackager;
     private WebsocketClient websocketClient = WebsocketClient.getInstance();
     private CheckersController CheckersUIController;
     private Game game;
@@ -50,15 +54,23 @@ public class Client extends Observable implements Observer {
         return game;
     }
 
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
     public Client() {
+        requestPackager = new RequestPackager();
         game = new Game();
-        game.startGame();
+    }
+
+    public void buildUi() {
+        setChanged();
+        notifyObservers(game);
     }
 
     public void setPlayers(List<Player> players) {
         game.setPlayers(players);
     }
-
 
     public void connect() {
         if (!websocketClient.isRunning) {
@@ -67,19 +79,16 @@ public class Client extends Observable implements Observer {
         }
     }
 
-    public void buildUi() {
-
-        Client.getInstance().game = new Game();
-
-        setChanged();
-        notifyObservers(game);
+    public void SubmitMove(Move move) {
+        websocketClient.sendMessageToServer(requestPackager.UseMove(move));
     }
 
 
     @Override
     public void update(Observable o, Object arg) {
-        if (arg.getClass() == SocketMessage.class) {
-            SocketMessage response = (SocketMessage) arg;
+            Gson gson = new Gson();
+            String message =(String) arg;
+             SocketMessage response = gson.fromJson( message , SocketMessage.class);
             Factory factory = new Factory();
             Command cmd = factory.getCommand(response.getOperation().toString());
             if (cmd != null) {
@@ -87,7 +96,7 @@ public class Client extends Observable implements Observer {
             } else {
                 System.out.println("The command " + response.getOperation().toString() + " is not found.");
             }
-        }
+
     }
 
 }

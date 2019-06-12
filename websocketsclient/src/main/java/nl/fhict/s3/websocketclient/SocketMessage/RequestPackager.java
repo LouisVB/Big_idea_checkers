@@ -13,24 +13,17 @@ public class RequestPackager {
         request = new SocketMessage();
     }
 
-    public SocketMessage Registerplayer(Player player)
+    public String Registerplayer(Player player)
     {
         request.setOperation(Operation.REGISTERPLAYER);
         request.setMessage((new Gson().toJson(player)));
-        return request;
+        return new Gson().toJson(request);
     }
 
-    public SocketMessage UseMove(Move move)
+    public String UseMove(Move move)
     {
         request.setOperation(Operation.USEMOVE);
-
-        return request;
+        request.setMessage((new Gson().toJson(move)));
+        return new Gson().toJson(request);
     }
-//
-//    public SocketMessage shoot()
-//    {
-//        request.setOperation(Operation.SHOOT);
-//        request.addParameter(new String[] {MoveType.SHOOT.toString()});
-//        return request;
-//    }
 }

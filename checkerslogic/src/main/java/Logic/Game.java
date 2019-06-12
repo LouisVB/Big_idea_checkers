@@ -62,7 +62,6 @@ public class Game implements Checkers {
         gameBoard = new GameBoard();
         gameBoard.createBoard();
         isGameStarted = true;
-
     }
 
     @Override

@@ -23,12 +23,6 @@
       <artifactId>gson</artifactId>
       <version>2.8.5</version>
     </dependency>
-    <dependency>
-      <groupId>nl.fhict.s3</groupId>
-      <artifactId>websocketshared</artifactId>
-      <version>1.0-SNAPSHOT</version>
-      <scope>compile</scope>
-    </dependency>
       <dependency>
           <groupId>nl.fhict.s3</groupId>
           <artifactId>checkerslogic</artifactId>

@@ -12,6 +12,9 @@ import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
+
+import nl.fhict.s3.websocketserver.GameSession.GameSession;
+import nl.fhict.s3.websocketserver.SocketMessage.SocketMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,10 +26,11 @@ public class GameEndPoint extends Observable {
     protected static final Map<Session, Player> playerSession = new HashMap<>();
 
     private Session session;
-    private String latestMessage;
+    private SocketMessage latestMessage;
 
 
-    public String getlatestMessage() {
+
+    public SocketMessage getlatestMessage() {
         return latestMessage;
     }
 
@@ -34,24 +38,27 @@ public class GameEndPoint extends Observable {
         return session;
     }
 
-
-
     @OnOpen
     public void onConnect(Session session) {
         log.info("Connected SessionID: {}", session.getId());
 
         sessions.add(session);
         log.info("Session added. Session count is {}", sessions.size());
+
+        if(sessions.size() == 2) {
+            sendBroadcast(GameSession.getInstance().startGame());
+        }
     }
 
     @OnMessage
     public void onText(String message, Session session) {
+        Gson gson = new Gson();
         log.info("Session ID: {} Received: {}", session.getId(), message);
-        latestMessage = message;
+        latestMessage = gson.fromJson(message, SocketMessage.class);
         this.session = session;
         setChanged();
         notifyObservers();
-        handleMessageFromClient(message, session);
+     //   handleMessageFromClient(message, session);
     }
 
     @OnClose
@@ -65,15 +72,9 @@ public class GameEndPoint extends Observable {
         log.error("Session ID: {} Error: {}", session.getId(), cause.getMessage());
     }
 
-    private void handleMessageFromClient(String jsonMessage, Session session) {
-        Gson gson = new Gson();
-        log.info("Session ID: {} Handling message: {}", session.getId(), jsonMessage);
-
-//        try {
-//            Greeting message = gson.fromJson(jsonMessage, Greeting.class);
-//            log.info("Session ID: {} Message handled: {}", session.getId(), message);
-//        } catch (JsonSyntaxException ex) {
-//            log.error("Can't process message: {0}", ex);
-//        }
+    public void sendBroadcast(String message) {
+        for (Session s : sessions) {
+            s.getAsyncRemote().sendText(message);
+        }
     }
 }

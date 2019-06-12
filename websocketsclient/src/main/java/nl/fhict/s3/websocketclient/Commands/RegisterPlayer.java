@@ -12,6 +12,6 @@ public class RegisterPlayer implements Command {
 
     @Override
     public String getName() {
-        return null;
+        return "REGISTERPLAYER";
     }
 }
