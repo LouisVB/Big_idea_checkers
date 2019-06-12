@@ -25,17 +25,16 @@ public class GameEndPoint extends Observable {
     private static final List<Session> sessions = new ArrayList<>();
     protected static final Map<Session, Player> playerSession = new HashMap<>();
 
+
+    private static GameEndPoint instance = null;
     private Session session;
-    private SocketMessage latestMessage;
 
-
-
-    public SocketMessage getlatestMessage() {
-        return latestMessage;
-    }
-
-    public Session getSession() {
-        return session;
+    public static GameEndPoint getInstance() {
+        if (instance == null) {
+            instance = new GameEndPoint();
+            log.info("GameEndPoint singleton instantiated");
+        }
+        return instance;
     }
 
     @OnOpen
@@ -44,7 +43,7 @@ public class GameEndPoint extends Observable {
 
         sessions.add(session);
         log.info("Session added. Session count is {}", sessions.size());
-
+        GameSession gameController = GameSession.getInstance(this);
         if(sessions.size() == 2) {
             sendBroadcast(GameSession.getInstance().startGame());
         }
@@ -54,11 +53,9 @@ public class GameEndPoint extends Observable {
     public void onText(String message, Session session) {
         Gson gson = new Gson();
         log.info("Session ID: {} Received: {}", session.getId(), message);
-        latestMessage = gson.fromJson(message, SocketMessage.class);
-        this.session = session;
+        SocketMessage latestMessage = gson.fromJson(message, SocketMessage.class);
         setChanged();
-        notifyObservers();
-     //   handleMessageFromClient(message, session);
+        notifyObservers(latestMessage);
     }
 
     @OnClose

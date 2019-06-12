@@ -3,20 +3,24 @@ package nl.fhict.s3.websocketserver.GameSession;
 import Logic.Game;
 import nl.fhict.s3.websocketserver.Interface.Command;
 import nl.fhict.s3.websocketserver.SocketMessage.Factory;
+import nl.fhict.s3.websocketserver.SocketMessage.Operation;
 import nl.fhict.s3.websocketserver.SocketMessage.RequestPackager;
 import nl.fhict.s3.websocketserver.SocketMessage.SocketMessage;
 import nl.fhict.s3.websocketserver.endpoint.GameEndPoint;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import javax.sound.midi.Receiver;
 import javax.websocket.Session;
 import java.net.Socket;
+import java.net.http.WebSocket;
 import java.util.Observable;
 import java.util.Observer;
 
 public class GameSession implements Observer {
-
+    private static final Logger log = LoggerFactory.getLogger(GameSession.class);
     private Game game;
-    private Session specificClient;
-    private GameEndPoint websocket;
+    private GameEndPoint websocket = GameEndPoint.getInstance();
     private RequestPackager requestPackager;
 
 
@@ -32,6 +36,7 @@ public class GameSession implements Observer {
     private GameSession() {
         game = new Game();
         requestPackager = new RequestPackager();
+        websocket.addObserver(this);
     }
 
     public static GameSession getInstance() {
@@ -56,16 +61,16 @@ public class GameSession implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        websocket = (GameEndPoint) o;
-        SocketMessage receiver = websocket.getlatestMessage();
 
+        SocketMessage receiver = (SocketMessage) arg;
+
+        // Process message based on operation
         Factory factory = new Factory();
         Command cmd = factory.getCommand(receiver.getOperation().toString());
         if (cmd != null) {
             cmd.execute(receiver);
         } else {
-            System.out.println("The command " + receiver.getOperation().toString() + " is not found.");
-
+            log.info("The command is not found.");
         }
     }
 

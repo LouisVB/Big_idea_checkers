@@ -6,6 +6,7 @@ import nl.fhict.s3.websocketserver.GameSession.GameSession;
 import nl.fhict.s3.websocketserver.Interface.Command;
 import nl.fhict.s3.websocketserver.SocketMessage.RequestPackager;
 import nl.fhict.s3.websocketserver.SocketMessage.SocketMessage;
+import nl.fhict.s3.websocketserver.endpoint.GameEndPoint;
 
 public class UseMove implements Command {
 
@@ -16,7 +17,7 @@ public class UseMove implements Command {
         Gson gson = new Gson();
         Move move = gson.fromJson(Response.getMessage(), Move.class);
         GameSession.getInstance().getGame().useMove(move);
-        GameSession.getInstance().broadcastToClients(packager.UseMove(move));
+        GameEndPoint.getInstance().sendBroadcast(packager.UseMove(move));
     }
 
     @Override
