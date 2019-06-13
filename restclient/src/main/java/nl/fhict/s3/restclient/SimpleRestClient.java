@@ -2,6 +2,7 @@ package nl.fhict.s3.restclient;
 
 import com.google.gson.Gson;
 import nl.fhict.s3.restshared.Greeting;
+import nl.fhict.s3.restshared.Player;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -22,7 +23,7 @@ class SimpleRestClient {
     SimpleRestClient() {
     }
 
-    Greeting getGreeting(String key) {
+    Player getGreeting(String key) {
         final String query = url + key;
         log.info("GET: " + query);
 
@@ -31,7 +32,7 @@ class SimpleRestClient {
         return executeQuery(httpGetQuery);
     }
 
-    Greeting postGreeting(Greeting greeting) {
+    Player postGreeting(Player Player) {
         final String query = url + "add";
         log.info("POST: " + query);
 
@@ -41,7 +42,7 @@ class SimpleRestClient {
         StringEntity params;
 
         try {
-            params = new StringEntity(gson.toJson(greeting));
+            params = new StringEntity(gson.toJson(Player));
             httpPostQuery.setEntity(params);
         } catch (Exception e) {
             log.error(e.toString());
@@ -50,8 +51,8 @@ class SimpleRestClient {
         return executeQuery(httpPostQuery);
     }
 
-    private Greeting executeQuery(HttpRequestBase requestBaseQuery) {
-        Greeting greeting = null;
+    private Player executeQuery(HttpRequestBase requestBaseQuery) {
+        Player greeting = null;
 
         try (CloseableHttpClient httpClient = HttpClients.createDefault();
             CloseableHttpResponse response = httpClient.execute(requestBaseQuery)) {
