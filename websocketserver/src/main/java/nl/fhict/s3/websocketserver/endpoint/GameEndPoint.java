@@ -13,7 +13,9 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
+import nl.fhict.s3.websocketserver.Command.Commands.RegisterPlayer;
 import nl.fhict.s3.websocketserver.GameSession.GameSession;
+import nl.fhict.s3.websocketserver.SocketMessage.Operation;
 import nl.fhict.s3.websocketserver.SocketMessage.SocketMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,8 +56,14 @@ public class GameEndPoint extends Observable {
         Gson gson = new Gson();
         log.info("Session ID: {} Received: {}", session.getId(), message);
         SocketMessage latestMessage = gson.fromJson(message, SocketMessage.class);
-        setChanged();
-        notifyObservers(latestMessage);
+        if(latestMessage.getOperation() == Operation.REGISTERPLAYER) {
+            RegisterPlayer registerPlayer = new RegisterPlayer();
+            registerPlayer.setUserSession(session);
+            registerPlayer.execute(latestMessage);
+        }else {
+            setChanged();
+            notifyObservers(latestMessage);
+        }
     }
 
     @OnClose
@@ -73,5 +81,17 @@ public class GameEndPoint extends Observable {
         for (Session s : sessions) {
             s.getAsyncRemote().sendText(message);
         }
+    }
+
+    public void sendMessage(Session session, String message) {
+         session.getAsyncRemote().sendText(message);
+    }
+
+    public void addPlayer(Player player, Session session ) {
+        playerSession.put(session , player);
+    }
+
+    public static Map<Session, Player> getPlayerSession() {
+        return playerSession;
     }
 }

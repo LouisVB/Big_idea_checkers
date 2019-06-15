@@ -1,14 +1,14 @@
 package nl.fhict.s3.restshared;
 
-public class Player {
+public class User {
 
     private String username;
     private String password;
 
-    public Player() {
+    public User() {
     }
 
-    public Player(String username, String password) {
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
     }

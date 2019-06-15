@@ -17,7 +17,6 @@
       <artifactId>javax-websocket-server-impl</artifactId>
       <version>9.4.15.v20190215</version>
     </dependency>
-
     <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
@@ -35,6 +34,11 @@
       <version>1.0-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
+    <dependency>
+      <groupId>nl.fhict.s3</groupId>
+      <artifactId>client</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
   </dependencies>
-
 </project>
