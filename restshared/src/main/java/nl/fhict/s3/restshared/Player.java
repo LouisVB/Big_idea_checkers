@@ -2,25 +2,15 @@ package nl.fhict.s3.restshared;
 
 public class Player {
 
-    private int id;
     private String username;
     private String password;
 
     public Player() {
     }
 
-    public Player(int id, String username, String password) {
-        this.id = id;
+    public Player(String username, String password) {
         this.username = username;
         this.password = password;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getUsername() {

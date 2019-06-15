@@ -11,13 +11,14 @@ public class PlayerStorage {
 
     private PlayerStorage(HashMap<String, Player> store) {
         this.store = store;
+        setupPlayers();
     }
 
-    public void addGreeting(Player player) {
+    public void addPlayer(Player player) {
         store.put(player.getUsername(), player);
     }
 
-    public Player getGreeting(String key) {
+    public Player getPlayer(String key) {
         return store.get(key);
     }
 
@@ -39,4 +40,15 @@ public class PlayerStorage {
         }
         return instance;
     }
+
+    private void setupPlayers() {
+        Player Leon = new Player("Leon", "Solid");
+        Player Frenk = new Player("Frenk", "Newcar");
+        Player Louis = new Player("Louis", "Gopher");
+
+        addPlayer(Louis);
+        addPlayer(Leon);
+        addPlayer(Frenk);
+    }
+
 }

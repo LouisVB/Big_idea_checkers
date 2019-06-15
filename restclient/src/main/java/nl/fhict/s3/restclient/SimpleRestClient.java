@@ -1,7 +1,6 @@
 package nl.fhict.s3.restclient;
 
 import com.google.gson.Gson;
-import nl.fhict.s3.restshared.Greeting;
 import nl.fhict.s3.restshared.Player;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -52,7 +51,7 @@ class SimpleRestClient {
     }
 
     private Player executeQuery(HttpRequestBase requestBaseQuery) {
-        Player greeting = null;
+        Player player = null;
 
         try (CloseableHttpClient httpClient = HttpClients.createDefault();
             CloseableHttpResponse response = httpClient.execute(requestBaseQuery)) {
@@ -62,12 +61,12 @@ class SimpleRestClient {
             final String entityString = EntityUtils.toString(entity);
             log.info("JSON entity: " + entityString);
 
-            greeting = gson.fromJson(entityString, Greeting.class);
+            player = gson.fromJson(entityString, Player.class);
 
         } catch (Exception e) {
             log.error(e.toString());
         }
 
-        return greeting;
+        return player;
     }
 }

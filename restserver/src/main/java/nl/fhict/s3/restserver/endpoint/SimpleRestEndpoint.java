@@ -19,7 +19,7 @@ import org.slf4j.LoggerFactory;
 public class SimpleRestEndpoint {
 
     private static final Logger log = LoggerFactory.getLogger(SimpleRestEndpoint.class);
-    private static PlayerStorage greetingStore = PlayerStorage.getInstance();
+    private static PlayerStorage playerStore = PlayerStorage.getInstance();
     private final Gson gson;
 
     public SimpleRestEndpoint() {
@@ -29,9 +29,9 @@ public class SimpleRestEndpoint {
     @Path("/{Player}")
     @Produces(MediaType.APPLICATION_JSON)
     @GET
-    public Response getGreeting(@PathParam("Player") String greeting) {
-        log.info("GET greeting called for key: {}", greeting);
-        Player myResponse = greetingStore.getGreeting(greeting);
+    public Response getGreeting(@PathParam("Player") String username) {
+        log.info("GET greeting called for key: {}", username);
+        Player myResponse = playerStore.getPlayer(username);
 
         return Response.status(200).entity(gson.toJson(myResponse)).build();
     }
@@ -42,7 +42,7 @@ public class SimpleRestEndpoint {
     public Response getAllGreetings() {
         log.info("GET all called");
 
-        return Response.status(200).entity(gson.toJson(greetingStore.getAll())).build();
+        return Response.status(200).entity(gson.toJson(playerStore.getAllPlayer())).build();
     }
 
     @POST
@@ -50,10 +50,10 @@ public class SimpleRestEndpoint {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response addGreeting(Player Player) {
-        log.info("POST add called for key: {}", greeting.getName());
+        log.info("POST add called for key: {}", Player.getUsername());
 
-        greetingStore.addGreeting(greeting);
+        playerStore.addPlayer(Player);
 
-        return Response.status(200).entity(gson.toJson(greeting)).build();
+        return Response.status(200).entity(gson.toJson(Player)).build();
     }
 }
