@@ -1,8 +1,17 @@
 package nl.fhict.s3.websocketclient;
 
-import Controller.CheckersController;
+import Model.GameBoard.Move;
+import com.google.gson.Gson;
+import nl.fhict.s3.websocketclient.Controller.CheckersController;
 import Logic.Game;
 import Model.Player;
+import nl.fhict.s3.websocketclient.Interface.Command;
+import nl.fhict.s3.websocketclient.SocketMessage.Factory;
+import nl.fhict.s3.websocketclient.SocketMessage.RequestPackager;
+import nl.fhict.s3.websocketclient.SocketMessage.SocketMessage;
+
+
+import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -18,6 +27,7 @@ public class Client extends Observable implements Observer {
     }
 
     //
+    private RequestPackager requestPackager;
     private WebsocketClient websocketClient = WebsocketClient.getInstance();
     private CheckersController CheckersUIController;
     private Game game;
@@ -40,8 +50,26 @@ public class Client extends Observable implements Observer {
         this.CheckersUIController = viewController;
     }
 
-    public Client() {
+    public Game getGame() {
+        return game;
+    }
 
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public Client() {
+        requestPackager = new RequestPackager();
+        game = new Game();
+    }
+
+    public void buildUi() {
+        setChanged();
+        notifyObservers(game);
+    }
+
+    public void setPlayers(List<Player> players) {
+        game.setPlayers(players);
     }
 
     public void connect() {
@@ -51,17 +79,32 @@ public class Client extends Observable implements Observer {
         }
     }
 
-    public void buildUi() {
+    public void failedLoginMessage() {
+        getViewController().showAlert("Failed login", "wrong credentials");
+    }
 
-        Client.getInstance().game = new Game();
+    public void SubmitNewPlayer(String username, String password) {
+        websocketClient.sendMessageToServer(requestPackager.Registerplayer(new Player(username, password)));
+    }
 
-        setChanged();
-        notifyObservers(game);
+    public void SubmitMove(Move move) {
+        websocketClient.sendMessageToServer(requestPackager.UseMove(move));
     }
 
 
     @Override
     public void update(Observable o, Object arg) {
+            Gson gson = new Gson();
+            String message =(String) arg;
+             SocketMessage response = gson.fromJson( message , SocketMessage.class);
+            Factory factory = new Factory();
+            Command cmd = factory.getCommand(response.getOperation().toString());
+            if (cmd != null) {
+                cmd.execute(response);
+            } else {
+                System.out.println("The command " + response.getOperation().toString() + " is not found.");
+            }
 
     }
+
 }

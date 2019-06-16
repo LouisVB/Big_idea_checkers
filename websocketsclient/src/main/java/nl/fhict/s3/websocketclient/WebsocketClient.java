@@ -4,27 +4,29 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Observable;
-import SocketMessage.SocketMessage;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
+import nl.fhict.s3.websocketclient.SocketMessage.RequestPackager;
+import nl.fhict.s3.websocketclient.SocketMessage.SocketMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.websocket.*;
 
+
+@ClientEndpoint
 public class WebsocketClient extends Observable {
 
     private static final Logger log = LoggerFactory.getLogger(WebsocketClient.class);
     private static WebsocketClient instance = null;
     private static final String URI = "ws://localhost:8095/checkers/";
     private Session session;
-    private Gson gson;
     public boolean isRunning = false;
     private String message;
+    private RequestPackager requestPackager;
 
-    private WebsocketClient() {
-        gson = new Gson();
-    }
+
 
     public static WebsocketClient getInstance() {
         if (instance == null) {
@@ -41,10 +43,9 @@ public class WebsocketClient extends Observable {
     }
 
     @OnMessage
-    public void onWebSocketText(String message, Session session) {
-        this.message = message;
+    public void onWebSocketText(String message) {
         log.info("Client message received {}", message);
-        processMessage();
+        processMessage(message);
     }
 
     @OnError
@@ -56,6 +57,11 @@ public class WebsocketClient extends Observable {
     public void onWebSocketClose(CloseReason reason) {
         log.info("Client close session {} for reason {} ", session.getRequestURI(), reason);
         session = null;
+    }
+
+    public void sendMessageToServer(String json) {
+        // Use asynchronous communication
+        session.getAsyncRemote().sendText(json);
     }
 
 
@@ -80,29 +86,17 @@ public class WebsocketClient extends Observable {
         }
     }
 
-    private void processMessage()
-    {
+    private void processMessage(String message) {
+
         SocketMessage responseMessage;
         log.info("Processing message: {}", message);
-        try
-        {
-            responseMessage = gson.fromJson(message, SocketMessage.class);
+        try {
+          //  responseMessage = gson.fromJson(message, SocketMessage.class);
             this.setChanged();
-            this.notifyObservers(responseMessage);
-        }
-        catch (JsonSyntaxException ex)
-        {
+            this.notifyObservers(message);
+        } catch (JsonSyntaxException ex) {
             log.error("Can't process message: {}", ex.getMessage());
         }
     }
-
-
-//
-//    public void SendMove(int playerNr, MoveType moveType)
-//    {
-//        Request requestMessage = packager.move(moveType);
-//    }
-
-
 
 }

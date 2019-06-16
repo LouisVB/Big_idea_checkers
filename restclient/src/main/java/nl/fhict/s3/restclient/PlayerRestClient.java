@@ -1,7 +1,7 @@
 package nl.fhict.s3.restclient;
 
 import com.google.gson.Gson;
-import nl.fhict.s3.restshared.Greeting;
+import nl.fhict.s3.restshared.User;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -13,16 +13,16 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.LoggerFactory;
 
-class SimpleRestClient {
+public class PlayerRestClient {
 
-    private static final org.slf4j.Logger log = LoggerFactory.getLogger(SimpleRestClient.class);
-    private final String url = "http://localhost:8080/greeting/"; // TODO Config file
+    private static final org.slf4j.Logger log = LoggerFactory.getLogger(PlayerRestClient.class);
+    private final String url = "http://localhost:8085/User/"; // TODO Config file
     private final Gson gson = new Gson();
 
-    SimpleRestClient() {
+    public PlayerRestClient() {
     }
 
-    Greeting getGreeting(String key) {
+    public User getUser(String key) {
         final String query = url + key;
         log.info("GET: " + query);
 
@@ -31,8 +31,8 @@ class SimpleRestClient {
         return executeQuery(httpGetQuery);
     }
 
-    Greeting postGreeting(Greeting greeting) {
-        final String query = url + "add";
+    public User authenticateUser(User User) {
+        final String query = url + "login";
         log.info("POST: " + query);
 
         HttpPost httpPostQuery = new HttpPost(query);
@@ -41,7 +41,7 @@ class SimpleRestClient {
         StringEntity params;
 
         try {
-            params = new StringEntity(gson.toJson(greeting));
+            params = new StringEntity(gson.toJson(User));
             httpPostQuery.setEntity(params);
         } catch (Exception e) {
             log.error(e.toString());
@@ -50,8 +50,8 @@ class SimpleRestClient {
         return executeQuery(httpPostQuery);
     }
 
-    private Greeting executeQuery(HttpRequestBase requestBaseQuery) {
-        Greeting greeting = null;
+    private User executeQuery(HttpRequestBase requestBaseQuery) {
+        User user = null;
 
         try (CloseableHttpClient httpClient = HttpClients.createDefault();
             CloseableHttpResponse response = httpClient.execute(requestBaseQuery)) {
@@ -61,12 +61,12 @@ class SimpleRestClient {
             final String entityString = EntityUtils.toString(entity);
             log.info("JSON entity: " + entityString);
 
-            greeting = gson.fromJson(entityString, Greeting.class);
+            user = gson.fromJson(entityString, User.class);
 
         } catch (Exception e) {
             log.error(e.toString());
         }
 
-        return greeting;
+        return user;
     }
 }

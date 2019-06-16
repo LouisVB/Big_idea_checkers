@@ -22,6 +22,10 @@ public class Move {
         this.newLocation = newLocation;
         this.type = type;
     }
+
+    public Move() {
+    }
+
     //empty move
     public Move(MoveType type) {
         this.type = type;

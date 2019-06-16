@@ -77,7 +77,12 @@ public class GameBoard implements Interface.Board {
         try {
             for (int i = 0; i < 2; i++) {
                 int killCheckX = (i == 1) ? piece.getLocation().getX() - 1 : piece.getLocation().getX() + 1;
-                Move NewMove = tryMove(piece, new Location(killCheckX, killCheckY));
+                Move NewMove = new Move();
+                try {
+                  NewMove = tryMove(piece, new Location(killCheckX, killCheckY));
+                } catch (IndexOutOfBoundsException e) {
+                    System.out.println("Out of bounds");
+                }
                 if (NewMove.getType() == NORMAL) {
                     result.add(new Move(piece, new Location(killCheckX, killCheckY), NewMove.getType()));
                 }
@@ -161,7 +166,7 @@ public class GameBoard implements Interface.Board {
 
     private Move tryMove(Piece piece, Location newLocation) {
 
-        if (Math.abs(newLocation.getX() - piece.getLocation().getX()) == 1 && newLocation.getY() - piece.getLocation().getY() == piece.getColor().getMoveDir() && !gameBoard[newLocation.getX()][newLocation.getY()].HasPiece() ) {//NORMAL move
+        if (Math.abs(newLocation.getX() - piece.getLocation().getX()) == 1 && newLocation.getY() - piece.getLocation().getY() == piece.getColor().getMoveDir() && !gameBoard[newLocation.getX()][newLocation.getY()].HasPiece()) {//NORMAL move
             return new Move(piece, newLocation, MoveType.NORMAL);
         } else if (Math.abs(newLocation.getX() - piece.getLocation().getX()) == 2 && newLocation.getY() - piece.getLocation().getY() == piece.getColor().getMoveDir() * 2) {//KILL move
             int enemyTileLocationX = piece.getLocation().getX() + (newLocation.getX() - piece.getLocation().getX()) / 2;

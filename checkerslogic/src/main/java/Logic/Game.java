@@ -53,12 +53,19 @@ public class Game implements Checkers {
        }
     }
 
+    public void setPlayers(List<Player> players) {
+        Players = players;
+    }
+
+    public void setCurrentPlayerAtTurn(Player currentPlayerAtTurn) {
+        CurrentPlayerAtTurn = currentPlayerAtTurn;
+    }
+
     @Override
     public void startGame() {
         gameBoard = new GameBoard();
         gameBoard.createBoard();
         isGameStarted = true;
-
     }
 
     @Override
