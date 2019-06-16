@@ -30,12 +30,6 @@
       </dependency>
     <dependency>
       <groupId>nl.fhict.s3</groupId>
-      <artifactId>checkerslogic</artifactId>
-      <version>1.0-SNAPSHOT</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>nl.fhict.s3</groupId>
       <artifactId>client</artifactId>
       <version>1.0-SNAPSHOT</version>
       <scope>compile</scope>
