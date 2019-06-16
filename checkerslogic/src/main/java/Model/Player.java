@@ -11,6 +11,11 @@ public class Player {
 
     }
 
+    public Player(String username, String password) {
+        this.username = username;
+        Password = password;
+    }
+
     public String getUsername() {
         return username;
     }

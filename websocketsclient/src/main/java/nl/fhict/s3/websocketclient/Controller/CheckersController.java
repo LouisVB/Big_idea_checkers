@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -158,11 +159,17 @@ public class CheckersController extends Application implements Observer {
 
     //Checks user user account and checks for single or multilayer.
     public void connectToSession(MouseEvent mouseEvent) {
-//        String name = Name.getText();
-//        String password = Password.getText();
-
         Client.getInstance().connect();
+        Client.getInstance().SubmitNewPlayer(Name.getText(), Password.getText());
+    }
 
+    public void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Warning Dialog");
+        alert.setHeaderText("Look, a Warning Dialog");
+        alert.setContentText("Careful with the next step!");
+
+        alert.showAndWait();
     }
 
     private void setupUi(Game gameLogic)

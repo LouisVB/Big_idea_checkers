@@ -14,7 +14,6 @@ import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
 import nl.fhict.s3.websocketserver.Command.Commands.RegisterPlayer;
-import nl.fhict.s3.websocketserver.GameSession.GameSession;
 import nl.fhict.s3.websocketserver.SocketMessage.Operation;
 import nl.fhict.s3.websocketserver.SocketMessage.SocketMessage;
 import org.slf4j.Logger;
@@ -45,10 +44,6 @@ public class GameEndPoint extends Observable {
 
         sessions.add(session);
         log.info("Session added. Session count is {}", sessions.size());
-        GameSession gameController = GameSession.getInstance(this);
-        if(sessions.size() == 2) {
-            sendBroadcast(GameSession.getInstance().startGame());
-        }
     }
 
     @OnMessage

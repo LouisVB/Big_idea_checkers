@@ -14,8 +14,8 @@ public class RequestPackager {
         request = new SocketMessage();
     }
 
-    public String Connect(Game serverGame){
-        request.setOperation(Operation.CONNECT);
+    public String startGame(Game serverGame){
+        request.setOperation(Operation.STARTGAME);
         request.setMessage((new Gson().toJson(serverGame)));
         return new Gson().toJson(request);
     }

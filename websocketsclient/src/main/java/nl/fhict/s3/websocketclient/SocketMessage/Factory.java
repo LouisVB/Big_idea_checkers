@@ -15,6 +15,7 @@ public class Factory {
         commands.put(new RegisterPlayer().getName(), new RegisterPlayer());
         commands.put(new Connect().getName(), new Connect());
         commands.put(new Usemove().getName(), new Usemove());
+        commands.put(new StartGame().getName(), new StartGame());
 
     }
 
