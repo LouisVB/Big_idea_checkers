@@ -41,7 +41,6 @@ public class GameEndPoint extends Observable {
     @OnOpen
     public void onConnect(Session session) {
         log.info("Connected SessionID: {}", session.getId());
-
         sessions.add(session);
         log.info("Session added. Session count is {}", sessions.size());
     }
@@ -51,13 +50,14 @@ public class GameEndPoint extends Observable {
         Gson gson = new Gson();
         log.info("Session ID: {} Received: {}", session.getId(), message);
         SocketMessage latestMessage = gson.fromJson(message, SocketMessage.class);
-        if(latestMessage.getOperation() == Operation.REGISTERPLAYER) {
+        if(latestMessage.getOperation().getType() == 1) {
             RegisterPlayer registerPlayer = new RegisterPlayer();
             registerPlayer.setUserSession(session);
             registerPlayer.execute(latestMessage);
         }else {
             setChanged();
             notifyObservers(latestMessage);
+            log.info("hi");
         }
     }
 

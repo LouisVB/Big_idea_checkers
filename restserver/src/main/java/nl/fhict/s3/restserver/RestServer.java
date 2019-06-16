@@ -14,7 +14,7 @@ public class RestServer {
     private static final Logger log = LoggerFactory.getLogger(RestServer.class);
 
     public static void main(String[] args) throws Exception {
-        Server server = new Server(8080); // TODO Config file
+        Server server = new Server(8085); // TODO Config file
 
         server.setHandler(getJerseyHandler());
 

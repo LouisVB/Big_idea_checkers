@@ -79,6 +79,10 @@ public class Client extends Observable implements Observer {
         }
     }
 
+    public void failedLoginMessage() {
+        getViewController().showAlert("Failed login", "wrong credentials");
+    }
+
     public void SubmitNewPlayer(String username, String password) {
         websocketClient.sendMessageToServer(requestPackager.Registerplayer(new Player(username, password)));
     }

@@ -15,7 +15,7 @@ public class Factory {
     public Factory()
     {
         commands = new HashMap<>();
-        commands.put(new RegisterPlayer().getName(), new RegisterPlayer());
+      //  commands.put(new RegisterPlayer().getName(), new RegisterPlayer());
         commands.put(new Connect().getName(), new Connect());
         commands.put(new UseMove().getName(), new UseMove());
     }

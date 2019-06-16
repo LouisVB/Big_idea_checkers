@@ -10,10 +10,7 @@ import nl.fhict.s3.websocketserver.endpoint.GameEndPoint;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.sound.midi.Receiver;
-import javax.websocket.Session;
-import java.net.Socket;
-import java.net.http.WebSocket;
+
 import java.util.Observable;
 import java.util.Observer;
 
@@ -49,15 +46,9 @@ public class GameSession implements Observer {
         return game;
     }
 
-    public String startGame() {
-
-        game.startGame();
-        return requestPackager.Connect(game);
-    }
-
-    public void broadcastToClients(String message) {
-        websocket.sendBroadcast(message);
-    }
+//    public void broadcastToClients(String message) {
+//        websocket.sendBroadcast(message);
+//    }
 
     @Override
     public void update(Observable o, Object arg) {

@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 public class PlayerRestClient {
 
     private static final org.slf4j.Logger log = LoggerFactory.getLogger(PlayerRestClient.class);
-    private final String url = "http://localhost:8080/User/"; // TODO Config file
+    private final String url = "http://localhost:8085/User/"; // TODO Config file
     private final Gson gson = new Gson();
 
     public PlayerRestClient() {
