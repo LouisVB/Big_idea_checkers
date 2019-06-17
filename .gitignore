@@ -11,12 +11,11 @@ hs_err_pid*
 ##########################
 ## Maven
 ##########################
-target/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
 pom.xml.next
-release.properties
+release.propertieses
 
 ##########################
 ## IntelliJ
@@ -24,7 +23,6 @@ release.properties
 *.iml
 .iml
 .idea/
-Tank-31.iml
 *.ipr
 *.iws
 out/

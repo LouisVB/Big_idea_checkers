@@ -1,0 +1,12 @@
+Model\GameBoard\Type\MoveType.class
+Model\GameBoard\Piece.class
+Model\GameBoard\Type\PieceColor.class
+Model\GameBoard\Move.class
+Model\Player.class
+Interface\Checkers.class
+Model\GameBoard\Location.class
+Interface\Board.class
+Model\GameBoard\GameBoard.class
+Model\GameBoard\Tile.class
+Model\GameBoard\Type\TileColor.class
+Logic\Game.class
