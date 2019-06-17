@@ -4,6 +4,7 @@ import Interface.Checkers;
 import Model.GameBoard.GameBoard;
 import Model.GameBoard.Move;
 import Model.GameBoard.Piece;
+import Model.GameBoard.Type.MoveType;
 import Model.GameBoard.Type.PieceColor;
 import Model.Player;
 
@@ -16,7 +17,7 @@ public class Game implements Checkers {
     private GameBoard gameBoard;
     private Player CurrentPlayerAtTurn;
     private boolean isGameStarted;
-    private List<Move> killMove = new ArrayList<>();
+    private List<Move> moves = new ArrayList<>();
 
 
     public Game() {
@@ -43,8 +44,8 @@ public class Game implements Checkers {
         return CurrentPlayerAtTurn;
     }
 
-    public List<Move> getKillMove() {
-        return killMove;
+    public List<Move> getMoves() {
+        return moves;
     }
 
     public void newPlayer(Player player){
@@ -75,17 +76,23 @@ public class Game implements Checkers {
 
     @Override
     public void useMove(Move move) {
-        gameBoard.doMove(move);
+        if(CurrentPlayerAtTurn.getMyPieces() == move.getMyPiece().getColor()){
+            gameBoard.doMove(move);
+            moves.clear();
+            changeTurn();
+            moves = gameBoard.getAllKillMoves(getCurrentPlayerAtTurn().getMyPieces());
+        }
     }
 
 
     @Override
     public boolean isKillMovePossible(PieceColor color) {
-        if(gameBoard.getAllKillMoves(color).isEmpty()){
-            return false;
-        }
-        killMove = gameBoard.getAllKillMoves(color);
-        return true;
+       for(Move move : moves) {
+           if(move.getType().equals(MoveType.KILL)){
+               return true;
+           }
+       }
+       return false;
     }
 
     @Override
@@ -93,7 +100,7 @@ public class Game implements Checkers {
         return null;
     }
 
-    public void ChangeTurn () {
+    public void changeTurn() {
         for (Player player : Players) {
             if(player != CurrentPlayerAtTurn){
                 CurrentPlayerAtTurn = player;
