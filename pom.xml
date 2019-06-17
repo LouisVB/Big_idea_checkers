@@ -96,19 +96,33 @@
                     <version>3.0.0</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.jacoco</groupId>
-                    <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.8.2</version>
-                    <executions>
-                        <execution>
-                            <id>default</id>
-                            <goals>
-                                <goal>prepare-agent</goal>
-                                <goal>report</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.3</version>
+                <executions>
+                <!-- prepare agent for measuring integration tests -->
+                <execution>
+                <id>prepare-integration-tests</id>
+                <phase>pre-integration-test</phase>
+                <goals>
+                <goal>prepare-agent</goal>
+                </goals>
+                <configuration>
+                <destFile>${basedir}/target/jacoco.exec</destFile>
+            </configuration>
+            </execution>
+                <execution>
+                <id>jacoco-site</id>
+                <phase>post-integration-test</phase>
+                <goals>
+                <goal>report</goal>
+            </goals>
+                <configuration>
+                <dataFile>${basedir}/target/jacoco.exec</dataFile>
+            </configuration>
+            </execution>
+            </executions>
+            </plugin>
             </plugins>
         </pluginManagement>
     </build>

@@ -1,0 +1,211 @@
+
+}nl.fhict.s3.websocketclient.Controller.CheckersController#fillRaster(Ljavafx/scene/layout/GridPane;[[LModel/GameBoard/Tile;)V¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaÇ Ç("10"0*Ø
+3¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaå å("Ê
+„
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaå å("
+moveModel.GameBoard.Move"__id*
+""*
+
+6
+10
+0*˛
+4¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaé é( ø
+º
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaé% é(=!
+%21javafx.scene.shape.Ellipse"Änl.fhict.s3.websocketclient.Controller.CheckersController#createPossibleMove(LModel/GameBoard/Move;)Ljavafx/scene/shape/Ellipse;*=;
+9nl.fhict.s3.websocketclient.Controller.CheckersController*
+
+moveModel.GameBoard.Move˙˜
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaé é(D
+%22void"8javafx.scene.layout.GridPane#add(Ljavafx/scene/Node;II)V*&
+$
+panejavafx.scene.layout.GridPane*#
+!
+%21javafx.scene.shape.Ellipse*
+""*
+""2add(Ljavafx/scene/Node;II)*
+3*©
+5¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaçA ç(EŒÀ
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaçA ç(V
+%19Model.GameBoard.Location"?Model.GameBoard.Move#getNewLocation()LModel/GameBoard/Location;*
+
+moveModel.GameBoard.Move2getNewLocation()ìê
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaçA ç(]
+
+%20int" Model.GameBoard.Location#getY()I*!
+
+%19Model.GameBoard.Location2getY()*
+3
+4*©
+6¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaç ç( ŒÀ
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaç ç(1
+%17Model.GameBoard.Location"?Model.GameBoard.Move#getNewLocation()LModel/GameBoard/Location;*
+
+moveModel.GameBoard.Move2getNewLocation()ìê
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaç ç(8
+
+%18int" Model.GameBoard.Location#getX()I*!
+
+%17Model.GameBoard.Location2getX()*
+3
+5*Î
+7¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaå% å(2©
+¶
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaå% å(2
+%16java.util.List"__id*P*N;
+9nl.fhict.s3.websocketclient.Controller.CheckersController"
+possibleMoves*
+3*˛
+8¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaã ã(!©
+¶
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaã ã(!
+%14java.util.List"__id*P*N;
+9nl.fhict.s3.websocketclient.Controller.CheckersController"
+possibleMovesâÜ
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaã ã(+
+%15boolean"java.util.List#isEmpty()Z*
+
+%14java.util.List2	isEmpty()*
+
+7
+10
+0*≠
+9¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaà à(ä
+á
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaà à(4 
+%7javafx.scene.shape.Ellipse"mnl.fhict.s3.websocketclient.Controller.CheckersController#createPieceBackground()Ljavafx/scene/shape/Ellipse;*=;
+9nl.fhict.s3.websocketclient.Controller.CheckersController¯ı
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaà à(;
+
+%8void"8javafx.scene.layout.GridPane#add(Ljavafx/scene/Node;II)V*&
+$
+panejavafx.scene.layout.GridPane*"
+ 
+%7javafx.scene.shape.Ellipse*
+""*
+""2add(Ljavafx/scene/Node;II)Ô
+Ï
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaâ) â(1
+%9$Array"
+__arrayGet*
+
+board$Array*
+""˚
+¯
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaâ) â(4
+%10Model.GameBoard.Tile"
+__arrayGet*
+
+%9$Array*
+""ª∏
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaâ) â(?
+%11Model.GameBoard.Piece"6Model.GameBoard.Tile#getPiece()LModel/GameBoard/Piece;*
+
+%10Model.GameBoard.Tile2
+getPiece()∏
+µ
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaâ â(@!
+%12javafx.scene.shape.Ellipse"znl.fhict.s3.websocketclient.Controller.CheckersController#createPiece(LModel/GameBoard/Piece;)Ljavafx/scene/shape/Ellipse;*=;
+9nl.fhict.s3.websocketclient.Controller.CheckersController*
+
+%11Model.GameBoard.Piece˙˜
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaâ â(G
+%13void"8javafx.scene.layout.GridPane#add(Ljavafx/scene/Node;II)V*&
+$
+panejavafx.scene.layout.GridPane*#
+!
+%12javafx.scene.shape.Ellipse*
+""*
+""2add(Ljavafx/scene/Node;II)*
+8*Ò
+10¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaÜ Ü(Ô
+Ï
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaÜ% Ü(-
+%0$Array"
+__arrayGet*
+
+board$Array*
+""˙
+˜
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaÜ% Ü(0
+%1Model.GameBoard.Tile"
+__arrayGet*
+
+%0$Array*
+""∏
+µ
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaÜ Ü(1"
+%2javafx.scene.shape.Rectangle"{nl.fhict.s3.websocketclient.Controller.CheckersController#createTiles(LModel/GameBoard/Tile;)Ljavafx/scene/shape/Rectangle;*=;
+9nl.fhict.s3.websocketclient.Controller.CheckersController*
+
+%1Model.GameBoard.Tile˙˜
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaÜ Ü(8
+
+%3void"8javafx.scene.layout.GridPane#add(Ljavafx/scene/Node;II)V*&
+$
+panejavafx.scene.layout.GridPane*$
+"
+%2javafx.scene.shape.Rectangle*
+""*
+""2add(Ljavafx/scene/Node;II)Ô
+Ï
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaá á(
+%4$Array"
+__arrayGet*
+
+board$Array*
+""˙
+˜
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaá á(
+%5Model.GameBoard.Tile"
+__arrayGet*
+
+%4$Array*
+""ïí
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaá á(*
+%6boolean" Model.GameBoard.Tile#HasPiece()Z*
+
+%5Model.GameBoard.Tile2
+HasPiece()*
+8
+9*‘
+0 "Ã
+¥
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaî î(
+implicit return:$
+panejavafx.scene.layout.GridPane:
+board$ArrayB=;
+9nl.fhict.s3.websocketclient.Controller.CheckersController

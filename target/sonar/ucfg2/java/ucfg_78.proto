@@ -1,0 +1,79 @@
+
+ALogic.Game#isKillMovePossible(LModel/GameBoard/Type/PieceColor;)Z
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaS S(%"paramAnnotations*ê
+2
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaU U("â
+
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaU U(
+""*´
+3
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaT T( 
+«
+
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaT T(
+%0Model.GameBoard.GameBoard"__id**
+
+Logic.Game"
+	gameBoard˚¯
+
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaT T(+
+%1java.util.List"\Model.GameBoard.GameBoard#getAllKillMoves(LModel/GameBoard/Type/PieceColor;)Ljava/util/List;*!
+
+%0Model.GameBoard.GameBoard**
+(
+colorModel.GameBoard.Type.PieceColor22getAllKillMoves(LModel/GameBoard/Type/PieceColor;)—Œ
+
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaT T(5
+%2boolean"java.util.List#isEmpty()Z*
+
+%1java.util.List2	isEmpty()*
+2
+1*º
+paramAnnotations
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaS% S(7⁄
+◊
+
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaR R(
+%3"
+__annotate*
+java.lang.Override**
+(
+colorModel.GameBoard.Type.PieceColorƒ
+¡
+
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaS1 S(6(
+colorModel.GameBoard.Type.PieceColor"__annotation*
+
+%3*
+3*ú
+1
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaW W( 
+«
+
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaW W(
+%4Model.GameBoard.GameBoard"__id**
+
+Logic.Game"
+	gameBoard˚¯
+
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaW W(3
+%5java.util.List"\Model.GameBoard.GameBoard#getAllKillMoves(LModel/GameBoard/Type/PieceColor;)Ljava/util/List;*!
+
+%4Model.GameBoard.GameBoard**
+(
+colorModel.GameBoard.Type.PieceColor22getAllKillMoves(LModel/GameBoard/Type/PieceColor;)æ
+ª
+
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaW W(3
+
+Logic.Game"
+
+killMove"__id*
+
+%5java.util.List"â
+
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaX X(
+"":(
+colorModel.GameBoard.Type.PieceColorB
+
+Logic.Game

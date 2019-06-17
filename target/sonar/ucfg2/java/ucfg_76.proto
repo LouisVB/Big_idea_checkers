@@ -1,0 +1,43 @@
+
+@Logic.Game#getMovePiece(LModel/GameBoard/Piece;)Ljava/util/List;
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaH H(""paramAnnotations*¨
+paramAnnotations
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaH" H(/Ð
+Í
+
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaG G(
+%2"
+__annotate*
+java.lang.Override* 
+
+pieceModel.GameBoard.Pieceº
+·
+
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaH) H(.
+pieceModel.GameBoard.Piece"__annotation*
+
+%2*
+1*É
+1
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaI I(Ê
+Ç
+
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaI I(
+%0Model.GameBoard.GameBoard"__id**
+
+Logic.Game"
+	gameBoardÙÖ
+
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaI I(-
+%1java.util.List"PModel.GameBoard.GameBoard#getPieceMoves(LModel/GameBoard/Piece;)Ljava/util/List;*!
+
+%0Model.GameBoard.GameBoard* 
+
+pieceModel.GameBoard.Piece2&getPieceMoves(LModel/GameBoard/Piece;)"™
+
+uC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Logic\Game.javaI I(.
+
+%1java.util.List:
+pieceModel.GameBoard.PieceB
+
+Logic.Game

@@ -1,0 +1,82 @@
+
+jnl.fhict.s3.websocketclient.SocketMessage.RequestPackager#Registerplayer(LModel/Player;)Ljava/lang/String;≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\RequestPackager.java ( "1*Ï!
+1≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\RequestPackager.java (…
+∆
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\RequestPackager.java (=
+%07nl.fhict.s3.websocketclient.SocketMessage.SocketMessage"__id*J*H;
+9nl.fhict.s3.websocketclient.SocketMessage.RequestPackager"	
+requestÅ
+˛
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\RequestPackager.java (59
+%13nl.fhict.s3.websocketclient.SocketMessage.Operation"__id*
+""ÖÇ
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\RequestPackager.java (6
+
+%2void"|nl.fhict.s3.websocketclient.SocketMessage.SocketMessage#setOperation(Lnl/fhict/s3/websocketclient/SocketMessage/Operation;)V*?
+=
+%07nl.fhict.s3.websocketclient.SocketMessage.SocketMessage*;
+9
+%13nl.fhict.s3.websocketclient.SocketMessage.Operation2CsetOperation(Lnl/fhict/s3/websocketclient/SocketMessage/Operation;)…
+∆
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\RequestPackager.java (=
+%37nl.fhict.s3.websocketclient.SocketMessage.SocketMessage"__id*J*H;
+9nl.fhict.s3.websocketclient.SocketMessage.RequestPackager"	
+requestÍÁ
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\RequestPackager.java  ($
+%4com.google.gson.Gson"com.google.gson.Gson¸
+˘
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\RequestPackager.java (&
+%5"com.google.gson.Gson#<init>()V*
+
+%4com.google.gson.GsonÁ‰
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\RequestPackager.java (5
+%6java.lang.String"Acom.google.gson.Gson#toJson(Ljava/lang/Object;)Ljava/lang/String;*
+
+%4com.google.gson.Gson*
+
+playerModel.Player2toJson(Ljava/lang/Object;)òï
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\RequestPackager.java (7
+
+%7void"Wnl.fhict.s3.websocketclient.SocketMessage.SocketMessage#setMessage(Ljava/lang/String;)V*?
+=
+%37nl.fhict.s3.websocketclient.SocketMessage.SocketMessage*
+
+%6java.lang.String2setMessage(Ljava/lang/String;)ÍÁ
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\RequestPackager.java (
+%8com.google.gson.Gson"com.google.gson.Gson¸
+˘
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\RequestPackager.java (
+%9"com.google.gson.Gson#<init>()V*
+
+%8com.google.gson.Gson 
+«
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\RequestPackager.java! ((>
+%107nl.fhict.s3.websocketclient.SocketMessage.SocketMessage"__id*J*H;
+9nl.fhict.s3.websocketclient.SocketMessage.RequestPackager"	
+requestêç
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\RequestPackager.java ()
+%11java.lang.String"Acom.google.gson.Gson#toJson(Ljava/lang/Object;)Ljava/lang/String;*
+
+%8com.google.gson.Gson*@
+>
+%107nl.fhict.s3.websocketclient.SocketMessage.SocketMessage2toJson(Ljava/lang/Object;)"–
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\RequestPackager.java (*
+
+%11java.lang.String:
+playerModel.PlayerB=;
+9nl.fhict.s3.websocketclient.SocketMessage.RequestPackager

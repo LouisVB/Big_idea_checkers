@@ -1,0 +1,73 @@
+
+mnl.fhict.s3.websocketclient.Controller.CheckersController#createPieceBackground()Ljavafx/scene/shape/Ellipse;≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaL L()"1*Ï
+1≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaN! N(#ˆÛ
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaN N(  
+%0javafx.scene.shape.Ellipse"javafx.scene.shape.Ellipseö
+ó
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaN N(8
+%1"&javafx.scene.shape.Ellipse#<init>(DD)V*"
+ 
+%0javafx.scene.shape.Ellipse*
+""*
+""Ñ
+Å
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaN N(9 
+bgjavafx.scene.shape.Ellipse"__id*"
+ 
+%0javafx.scene.shape.EllipseÊ
+„
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaO O(
+%2javafx.scene.paint.Color"__id*
+""ÓÎ
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaO O(
+
+%3void"=javafx.scene.shape.Shape#setFill(Ljavafx/scene/paint/Paint;)V*"
+ 
+bgjavafx.scene.shape.Ellipse* 
+
+%2javafx.scene.paint.Color2#setFill(Ljavafx/scene/paint/Paint;)Ê
+„
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaQ Q( 
+%4javafx.scene.paint.Color"__id*
+""ÚÔ
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaQ Q(!
+
+%5void"?javafx.scene.shape.Shape#setStroke(Ljavafx/scene/paint/Paint;)V*"
+ 
+bgjavafx.scene.shape.Ellipse* 
+
+%4javafx.scene.paint.Color2%setStroke(Ljavafx/scene/paint/Paint;)∞≠
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaR R($
+
+%6void"+javafx.scene.shape.Shape#setStrokeWidth(D)V*"
+ 
+bgjavafx.scene.shape.Ellipse*
+""2setStrokeWidth(D)•¢
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaT T(
+
+%7void"#javafx.scene.Node#setTranslateX(D)V*"
+ 
+bgjavafx.scene.shape.Ellipse*2
+2setTranslateX(D)•¢
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaU U(
+
+%8void"#javafx.scene.Node#setTranslateY(D)V*"
+ 
+bgjavafx.scene.shape.Ellipse*22setTranslateY(D)"Ÿ
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaW W("
+ 
+bgjavafx.scene.shape.EllipseB=;
+9nl.fhict.s3.websocketclient.Controller.CheckersController

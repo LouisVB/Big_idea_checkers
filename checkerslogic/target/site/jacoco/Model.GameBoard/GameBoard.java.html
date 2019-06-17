@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="nl"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GameBoard.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Logic</a> &gt; <a href="index.source.html" class="el_package">Model.GameBoard</a> &gt; <span class="el_source">GameBoard.java</span></div><h1>GameBoard.java</h1><pre class="source lang-java linenums">package Model.GameBoard;
+
+import Model.GameBoard.Type.MoveType;
+import Model.GameBoard.Type.PieceColor;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static Model.GameBoard.Type.MoveType.KILL;
+import static Model.GameBoard.Type.MoveType.NORMAL;
+
+public class GameBoard implements Interface.Board {
+    private int size;
+    private Tile[][] gameBoard;
+    private List&lt;Piece&gt; Pieces;
+
+    public Tile[][] getGameBoard() {
+<span class="nc" id="L18">        return gameBoard;</span>
+    }
+
+    public List&lt;Piece&gt; getPieces() {
+<span class="nc" id="L22">        return Pieces;</span>
+    }
+
+    public int getSize() {
+<span class="nc" id="L26">        return size;</span>
+    }
+
+<span class="nc" id="L29">    public GameBoard() {</span>
+<span class="nc" id="L30">        size = 8;</span>
+<span class="nc" id="L31">        gameBoard = new Tile[size][size];</span>
+<span class="nc" id="L32">        Pieces = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L33">    }</span>
+
+    @Override
+    public void createBoard() {
+<span class="nc bnc" id="L37" title="All 2 branches missed.">        for (int y = 0; y &lt; gameBoard.length; y++) {</span>
+<span class="nc bnc" id="L38" title="All 2 branches missed.">            for (int x = 0; x &lt; gameBoard.length; x++) {</span>
+<span class="nc bnc" id="L39" title="All 2 branches missed.">                Tile tile = new Tile((x + y) % 2 == 0, x, y);</span>
+<span class="nc" id="L40">                gameBoard[x][y] = tile;</span>
+
+<span class="nc" id="L42">                Piece piece = null;</span>
+
+<span class="nc bnc" id="L44" title="All 4 branches missed.">                if (y &lt;= 2 &amp;&amp; (x + y) % 2 != 0) {</span>
+<span class="nc" id="L45">                    piece = new Piece(PieceColor.Red, new Location(x, y));</span>
+                }
+
+<span class="nc bnc" id="L48" title="All 4 branches missed.">                if (y &gt;= 5 &amp;&amp; (x + y) % 2 != 0) {</span>
+<span class="nc" id="L49">                    piece = new Piece(PieceColor.White, new Location(x, y));</span>
+                }
+
+<span class="nc bnc" id="L52" title="All 2 branches missed.">                if (piece != null) {</span>
+<span class="nc" id="L53">                    tile.setPiece(piece);</span>
+<span class="nc" id="L54">                    Pieces.add(piece);</span>
+                }
+            }
+        }
+<span class="nc" id="L58">    }</span>
+
+    //UnitTestOnly
+    public void createBoardWithoutPieces() {
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        for (int y = 0; y &lt; gameBoard.length; y++) {</span>
+<span class="nc bnc" id="L63" title="All 2 branches missed.">            for (int x = 0; x &lt; gameBoard.length; x++) {</span>
+<span class="nc bnc" id="L64" title="All 2 branches missed.">                Tile tile = new Tile((x + y) % 2 == 0, x, y);</span>
+<span class="nc" id="L65">                gameBoard[x][y] = tile;</span>
+            }
+        }
+<span class="nc" id="L68">    }</span>
+
+    @Override
+    public List&lt;Move&gt; getPieceMoves(Piece piece) {
+<span class="nc" id="L72">        List&lt;Move&gt; result = new ArrayList&lt;&gt;();</span>
+        //Loop by all existing pieces.
+        // x location move based on move dir
+<span class="nc" id="L75">        int killCheckY = piece.getLocation().getY() + piece.getColor().getMoveDir();</span>
+        //try to find kill move and add to list
+        try {
+<span class="nc bnc" id="L78" title="All 2 branches missed.">            for (int i = 0; i &lt; 2; i++) {</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">                int killCheckX = (i == 1) ? piece.getLocation().getX() - 1 : piece.getLocation().getX() + 1;</span>
+<span class="nc" id="L80">                Move NewMove = new Move();</span>
+                try {
+<span class="nc" id="L82">                  NewMove = tryMove(piece, new Location(killCheckX, killCheckY));</span>
+<span class="nc" id="L83">                } catch (IndexOutOfBoundsException e) {</span>
+<span class="nc" id="L84">                    System.out.println(&quot;Out of bounds&quot;);</span>
+<span class="nc" id="L85">                }</span>
+<span class="nc bnc" id="L86" title="All 2 branches missed.">                if (NewMove.getType() == NORMAL) {</span>
+<span class="nc" id="L87">                    result.add(new Move(piece, new Location(killCheckX, killCheckY), NewMove.getType()));</span>
+                }
+            }
+<span class="nc" id="L90">        } catch (IndexOutOfBoundsException e) {</span>
+<span class="nc" id="L91">            System.out.println(&quot;Out of bounds&quot;);</span>
+<span class="nc" id="L92">        } catch (Exception e) {</span>
+<span class="nc" id="L93">            System.out.println(&quot;Exception occurred&quot;);</span>
+<span class="nc" id="L94">        }</span>
+<span class="nc" id="L95">        return result;</span>
+    }
+
+    @Override
+    public List&lt;Move&gt; getAllKillMoves(PieceColor color) {
+<span class="nc" id="L100">        List&lt;Move&gt; result = new ArrayList&lt;&gt;();</span>
+        //Loop by all existing pieces.
+<span class="nc bnc" id="L102" title="All 2 branches missed.">        for (Piece piece : Pieces) {</span>
+            //check pieces of the selected color
+<span class="nc bnc" id="L104" title="All 2 branches missed.">            if (piece.getColor() == color) {</span>
+                // x location move based on move dir
+<span class="nc" id="L106">                int killCheckY = piece.getLocation().getY() + piece.getColor().getMoveDir() * 2;</span>
+                //try to find kill move and add to list
+                try {
+<span class="nc bnc" id="L109" title="All 2 branches missed.">                    for (int i = 0; i &lt; 2; i++) {</span>
+<span class="nc bnc" id="L110" title="All 2 branches missed.">                        int killCheckX = (i == 1) ? piece.getLocation().getX() - 2 : piece.getLocation().getX() + 2;</span>
+<span class="nc" id="L111">                        Move NewMove = tryMove(piece, new Location(killCheckX, killCheckY));</span>
+<span class="nc bnc" id="L112" title="All 2 branches missed.">                        if (NewMove.getType() == KILL) {</span>
+<span class="nc" id="L113">                            result.add(new Move(piece, NewMove.getEnemyPiece(), new Location(killCheckX, killCheckY), NewMove.getType()));</span>
+                        }
+                    }
+<span class="nc" id="L116">                } catch (IndexOutOfBoundsException e) {</span>
+<span class="nc" id="L117">                    System.out.println(&quot;Out of bounds&quot;);</span>
+<span class="nc" id="L118">                } catch (Exception e) {</span>
+<span class="nc" id="L119">                    System.out.println(&quot;Exception occurred&quot;);</span>
+<span class="nc" id="L120">                }</span>
+            }
+<span class="nc" id="L122">        }</span>
+<span class="nc" id="L123">        return result;</span>
+    }
+
+    @Override
+    public void doMove(Move nextMove) {
+        //remove piece from old location
+<span class="nc" id="L129">        gameBoard[nextMove.getMyPiece().getLocation().getX()][nextMove.getMyPiece().getLocation().getY()].removePiece();</span>
+        //Place piece on new location
+<span class="nc" id="L131">        gameBoard[nextMove.getNewLocation().getX()][nextMove.getNewLocation().getY()].setPiece(nextMove.getMyPiece());</span>
+        //set new location to piece.
+<span class="nc" id="L133">        changePieceLocation(nextMove.getMyPiece(), nextMove.getNewLocation());</span>
+        //Remove enemy piece if kill move
+<span class="nc bnc" id="L135" title="All 2 branches missed.">        if (nextMove.getType() == KILL) {</span>
+<span class="nc" id="L136">            removePiece(nextMove.getEnemyPiece());</span>
+        }
+<span class="nc" id="L138">    }</span>
+
+    /**
+     * [private FUNCTIONS]
+     **/
+    private void removePiece(Piece piece) {
+<span class="nc" id="L144">        Pieces.remove(piece); //remove piece from list</span>
+<span class="nc" id="L145">        gameBoard[piece.getLocation().getX()][piece.getLocation().getY()].removePiece(); //remove piece from tile</span>
+<span class="nc" id="L146">    }</span>
+
+    private void changePieceLocation(Piece myPiece, Location newLocation) {
+<span class="nc bnc" id="L149" title="All 2 branches missed.">        for (Piece piece : Pieces) {</span>
+<span class="nc bnc" id="L150" title="All 2 branches missed.">            if (piece == myPiece) {</span>
+<span class="nc" id="L151">                piece.getLocation().changeLocationX(newLocation.getX());</span>
+<span class="nc" id="L152">                piece.getLocation().changeLocationY(newLocation.getY());</span>
+            }
+<span class="nc" id="L154">        }</span>
+<span class="nc" id="L155">    }</span>
+
+    private Piece getPieceByLocation(Location location) {
+<span class="nc" id="L158">        Piece specificPiece = new Piece();</span>
+<span class="nc bnc" id="L159" title="All 2 branches missed.">        for (Piece piece : Pieces) {</span>
+<span class="nc bnc" id="L160" title="All 4 branches missed.">            if (location.getX() == piece.getLocation().getX() &amp;&amp; location.getY() == piece.getLocation().getY()) {</span>
+<span class="nc" id="L161">                specificPiece = piece;</span>
+            }
+<span class="nc" id="L163">        }</span>
+<span class="nc" id="L164">        return specificPiece;</span>
+    }
+
+    private Move tryMove(Piece piece, Location newLocation) {
+
+<span class="nc bnc" id="L169" title="All 6 branches missed.">        if (Math.abs(newLocation.getX() - piece.getLocation().getX()) == 1 &amp;&amp; newLocation.getY() - piece.getLocation().getY() == piece.getColor().getMoveDir() &amp;&amp; !gameBoard[newLocation.getX()][newLocation.getY()].HasPiece()) {//NORMAL move</span>
+<span class="nc" id="L170">            return new Move(piece, newLocation, MoveType.NORMAL);</span>
+<span class="nc bnc" id="L171" title="All 4 branches missed.">        } else if (Math.abs(newLocation.getX() - piece.getLocation().getX()) == 2 &amp;&amp; newLocation.getY() - piece.getLocation().getY() == piece.getColor().getMoveDir() * 2) {//KILL move</span>
+<span class="nc" id="L172">            int enemyTileLocationX = piece.getLocation().getX() + (newLocation.getX() - piece.getLocation().getX()) / 2;</span>
+<span class="nc" id="L173">            int enemyTileLocationY = piece.getLocation().getY() + (newLocation.getY() - piece.getLocation().getY()) / 2;</span>
+
+<span class="nc bnc" id="L175" title="All 4 branches missed.">            if (gameBoard[enemyTileLocationX][enemyTileLocationY].HasPiece() &amp;&amp; gameBoard[enemyTileLocationX][enemyTileLocationY].getPiece().getColor() != piece.getColor()) {</span>
+<span class="nc" id="L176">                return new Move(piece, gameBoard[enemyTileLocationX][enemyTileLocationY].getPiece(), newLocation, KILL);</span>
+            }
+        }
+<span class="nc" id="L179">        return new Move(MoveType.NONE);</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

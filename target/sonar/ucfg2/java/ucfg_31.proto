@@ -1,0 +1,91 @@
+
+{nl.fhict.s3.websocketclient.Controller.CheckersController#createTiles(LModel/GameBoard/Tile;)Ljavafx/scene/shape/Rectangle;≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaA A(!"4*ñ
+2≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaGR G(W”
+–
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaGR G(j
+%8javafx.scene.paint.Color"Njavafx.scene.paint.Color#valueOf(Ljava/lang/String;)Ljavafx/scene/paint/Color;*"
+javafx.scene.paint.Color*	
+#303030Ä
+˝
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaGR G(j
+%6javafx.scene.paint.Color"__id* 
+
+%8javafx.scene.paint.Color*
+1*ì
+3≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaG: G(?–
+Õ
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaG: G(O
+%7javafx.scene.paint.Color"Njavafx.scene.paint.Color#valueOf(Ljava/lang/String;)Ljavafx/scene/paint/Color;*"
+javafx.scene.paint.Color*
+#fffÄ
+˝
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaG: G(O
+%6javafx.scene.paint.Color"__id* 
+
+%7javafx.scene.paint.Color*
+1*Ú
+4≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaC C((˙˜
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaC C(&"
+%0javafx.scene.shape.Rectangle"javafx.scene.shape.Rectangleå
+â
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaC C((
+%1"&javafx.scene.shape.Rectangle#<init>()V*$
+"
+%0javafx.scene.shape.Rectangleä
+á
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaC C()$
+tilejavafx.scene.shape.Rectangle"__id*$
+"
+%0javafx.scene.shape.Rectangle¨©
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaD D(
+
+%2void"*javafx.scene.shape.Rectangle#setHeight(D)V*&
+$
+tilejavafx.scene.shape.Rectangle*2>2setHeight(D)™ß
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaE E(
+
+%3void")javafx.scene.shape.Rectangle#setWidth(D)V*&
+$
+tilejavafx.scene.shape.Rectangle*2>2setWidth(D)À»
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaG G($$
+%4Model.GameBoard.Type.TileColor"?Model.GameBoard.Tile#getColor()LModel/GameBoard/Type/TileColor;*
+
+TileModel.GameBoard.Tile2
+getColor()Ï
+È
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaG( G(7$
+%5Model.GameBoard.Type.TileColor"__id*
+""*
+2
+3*ç
+1≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaG G(kÚÔ
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaG G(k
+
+%9void"=javafx.scene.shape.Shape#setFill(Ljavafx/scene/paint/Paint;)V*&
+$
+tilejavafx.scene.shape.Rectangle* 
+
+%6javafx.scene.paint.Color2#setFill(Ljavafx/scene/paint/Paint;)"›
+≤
+ßC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\Controller\CheckersController.javaI I(&
+$
+tilejavafx.scene.shape.Rectangle:
+TileModel.GameBoard.TileB=;
+9nl.fhict.s3.websocketclient.Controller.CheckersController
