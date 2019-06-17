@@ -1,0 +1,14 @@
+nl\fhict\s3\websocketclient\Controller\CheckersController.class
+nl\fhict\s3\websocketclient\WebsocketClient.class
+nl\fhict\s3\websocketclient\SocketMessage\RequestPackager.class
+nl\fhict\s3\websocketclient\SocketMessage\SocketMessage.class
+nl\fhict\s3\websocketclient\Commands\RegisterPlayer.class
+nl\fhict\s3\websocketclient\Client.class
+nl\fhict\s3\websocketclient\SocketMessage\Operation.class
+nl\fhict\s3\websocketclient\Controller\CheckersController$2.class
+nl\fhict\s3\websocketclient\Commands\StartGame.class
+nl\fhict\s3\websocketclient\Controller\CheckersController$1.class
+nl\fhict\s3\websocketclient\Commands\Connect.class
+nl\fhict\s3\websocketclient\Interface\Command.class
+nl\fhict\s3\websocketclient\SocketMessage\Factory.class
+nl\fhict\s3\websocketclient\Commands\Usemove.class

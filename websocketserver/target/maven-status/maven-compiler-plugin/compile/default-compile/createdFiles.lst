@@ -1,0 +1,11 @@
+nl\fhict\s3\websocketserver\Command\Commands\RegisterPlayer.class
+nl\fhict\s3\websocketserver\Interface\Command.class
+nl\fhict\s3\websocketserver\GameSession\GameSession.class
+nl\fhict\s3\websocketserver\endpoint\GameEndPoint.class
+nl\fhict\s3\websocketserver\WebsocketServer.class
+nl\fhict\s3\websocketserver\Command\Commands\UseMove.class
+nl\fhict\s3\websocketserver\SocketMessage\Operation.class
+nl\fhict\s3\websocketserver\SocketMessage\RequestPackager.class
+nl\fhict\s3\websocketserver\SocketMessage\SocketMessage.class
+nl\fhict\s3\websocketserver\Command\Commands\Connect.class
+nl\fhict\s3\websocketserver\SocketMessage\Factory.class

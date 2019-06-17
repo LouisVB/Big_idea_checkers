@@ -1,0 +1,17 @@
+<configuration>
+  <appender class="ch.qos.logback.core.ConsoleAppender" name="STDOUT">
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <pattern>%date [%-30thread{30}] [%-5level] %-54logger{54} - %message%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger level="INFO" name="nl.fhict.s3"/>
+  <logger level="INFO" name="org.eclipse.jetty"/>
+  <logger level="INFO" name="org.eclipse.jetty.io"/>
+  <logger level="INFO" name="org.eclipse.jetty.util"/>
+
+  <root level="ERROR">
+    <appender-ref ref="STDOUT"/>
+  </root>
+
+</configuration>
