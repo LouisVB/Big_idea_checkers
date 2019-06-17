@@ -1,0 +1,25 @@
+
+nl.fhict.s3.websocketclient.SocketMessage.Factory#getCommand(Ljava/lang/String;)Lnl/fhict/s3/websocketclient/Interface/Command;ª
+ŸC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\Factory.java ("1*ª
+1ª
+ŸC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\Factory.java (”
+‘
+ª
+ŸC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\Factory.java (
+%0java.util.HashMap"__id*C*A3
+1nl.fhict.s3.websocketclient.SocketMessage.Factory"
+
+commandsùö
+ª
+ŸC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\Factory.java ((3
+%1-nl.fhict.s3.websocketclient.Interface.Command";java.util.HashMap#get(Ljava/lang/Object;)Ljava/lang/Object;*
+
+%0java.util.HashMap*!
+
+commandNamejava.lang.String2get(Ljava/lang/Object;)"ä
+ª
+ŸC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\SocketMessage\Factory.java ()5
+3
+%1-nl.fhict.s3.websocketclient.Interface.Command:
+commandNamejava.lang.StringB53
+1nl.fhict.s3.websocketclient.SocketMessage.Factory

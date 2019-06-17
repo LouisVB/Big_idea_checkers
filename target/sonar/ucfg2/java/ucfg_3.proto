@@ -1,0 +1,161 @@
+
+ƒnl.fhict.s3.restclient.PlayerRestClient#executeQuery(Lorg/apache/http/client/methods/HttpRequestBase;)Lnl/fhict/s3/restshared/User;š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java5 5("13*ı
+13š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java6 6(Ó
+Ğ
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java6 6(#
+usernl.fhict.s3.restshared.User"__id*
+""*
+12*™
+2š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java@ @(:ñ
+î
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java@ @(:#
+usernl.fhict.s3.restshared.User"__id*$
+"
+%12nl.fhict.s3.restshared.User*
+1*¹
+5š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java@ @(ú
+÷
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java@ @(
+%11com.google.gson.Gson"__id*5*3)
+'nl.fhict.s3.restclient.PlayerRestClient"
+gson”‘
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java@ @(:"
+%12nl.fhict.s3.restshared.User"Tcom.google.gson.Gson#fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;*
+
+%11com.google.gson.Gson*"
+ 
+entityStringjava.lang.String*
+""2-fromJson(Ljava/lang/String;Ljava/lang/Class;)*
+2*ù
+6š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java= =(Eâ
+ß
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java= =(E 
+entityStringjava.lang.String"__id*
+
+%7java.lang.StringÆ
+Ã
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java> >(
+%8org.slf4j.Logger"__id*
+""ù
+ö
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java> >(3
+%9java.lang.String"__concat*
+JSON entity: *"
+ 
+entityStringjava.lang.String§¤
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java> >(4
+%10void"*org.slf4j.Logger#info(Ljava/lang/String;)V*
+
+%8org.slf4j.Logger*
+
+%9java.lang.String2info(Ljava/lang/String;)*
+5*ü
+7š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java< <(5ğ
+í
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java< <(5$
+entityorg.apache.http.HttpEntity"__id*"
+ 
+%6org.apache.http.HttpEntityá
+Ş
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java=( =(D
+%7java.lang.String"Yorg.apache.http.util.EntityUtils#toString(Lorg/apache/http/HttpEntity;)Ljava/lang/String;*$""
+ org.apache.http.util.EntityUtils*&
+$
+entityorg.apache.http.HttpEntity*
+6*
+8š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java<  <((ÙÖ
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java<  <(4 
+%6org.apache.http.HttpEntity"Dorg.apache.http.HttpResponse#getEntity()Lorg/apache/http/HttpEntity;*B
+@
+response4org.apache.http.client.methods.CloseableHttpResponse2getEntity()*
+7*Å
+9š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java: :(:ô
+ñ
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java: :(:
+%4java.lang.String"__concat*
+
+Status: *"
+ 
+%3org.apache.http.StatusLine¦£
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java: :(;
+
+%5void"*org.slf4j.Logger#info(Ljava/lang/String;)V*
+
+%2org.slf4j.Logger*
+
+%4java.lang.String2info(Ljava/lang/String;)*
+8*ü
+10š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java9 9(Q¦
+£
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java9 9(Q@
+response4org.apache.http.client.methods.CloseableHttpResponse"__id*<
+:
+%14org.apache.http.client.methods.CloseableHttpResponseÆ
+Ã
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java: :(
+%2org.slf4j.Logger"__id*
+""áŞ
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java:" :(: 
+%3org.apache.http.StatusLine"Horg.apache.http.HttpResponse#getStatusLine()Lorg/apache/http/StatusLine;*B
+@
+response4org.apache.http.client.methods.CloseableHttpResponse2getStatusLine()*
+9*‰
+11š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java8 8(I
+›
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java8 8(I=
+
+httpClient/org.apache.http.impl.client.CloseableHttpClient"__id*7
+5
+%0/org.apache.http.impl.client.CloseableHttpClient¾»
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java9- 9(Q:
+%14org.apache.http.client.methods.CloseableHttpResponse"org.apache.http.impl.client.CloseableHttpClient#execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/client/methods/CloseableHttpResponse;*?
+=
+
+httpClient/org.apache.http.impl.client.CloseableHttpClient*D
+B
+requestBaseQuery.org.apache.http.client.methods.HttpRequestBase28execute(Lorg/apache/http/client/methods/HttpUriRequest;)*
+10*˜
+12š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java8. 8(9î
+ë
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java8. 8(I5
+%0/org.apache.http.impl.client.CloseableHttpClient"horg.apache.http.impl.client.HttpClients#createDefault()Lorg/apache/http/impl/client/CloseableHttpClient;*+")
+'org.apache.http.impl.client.HttpClients*
+11*ç
+1š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.javaF F("Ä
+š
+C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.javaF F(%
+#
+usernl.fhict.s3.restshared.User:B
+requestBaseQuery.org.apache.http.client.methods.HttpRequestBaseB+)
+'nl.fhict.s3.restclient.PlayerRestClient

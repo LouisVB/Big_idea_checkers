@@ -1,0 +1,406 @@
+
+jModel.GameBoard.GameBoard#tryMove(LModel/GameBoard/Piece;LModel/GameBoard/Location;)LModel/GameBoard/Move;ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.javaß ß("10*Á
+2ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java∞  ∞(%⁄
+◊
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java∞' ∞(0
+%47$Array"__id*,**
+Model.GameBoard.GameBoard"
+	gameBoardÀ
+»
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java∞' ∞(D
+%48$Array"
+__arrayGet*
+
+%47$Array*
+""Ÿ
+÷
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java∞' ∞(X
+%49Model.GameBoard.Tile"
+__arrayGet*
+
+%48$Array*
+""òï
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java∞' ∞(c
+%50Model.GameBoard.Piece"6Model.GameBoard.Tile#getPiece()LModel/GameBoard/Piece;*
+
+%49Model.GameBoard.Tile2
+getPiece()À
+»
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java∞r ∞(v$
+%51Model.GameBoard.Type.MoveType"__id*
+"" «
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java∞ ∞(
+%52Model.GameBoard.Move"Model.GameBoard.Move⁄
+◊
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java∞ ∞(w
+%53"ÖModel.GameBoard.Move#<init>(LModel/GameBoard/Piece;LModel/GameBoard/Piece;LModel/GameBoard/Location;LModel/GameBoard/Type/MoveType;)V*
+
+%52Model.GameBoard.Move* 
+
+pieceModel.GameBoard.Piece*
+
+%50Model.GameBoard.Piece*)
+'
+newLocationModel.GameBoard.Location*&
+$
+%51Model.GameBoard.Type.MoveType"≥
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java∞ ∞(x
+
+%52Model.GameBoard.Move*™
+3ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.javaØP Ø(Y⁄
+◊
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.javaØP Ø(Y
+%41$Array"__id*,**
+Model.GameBoard.GameBoard"
+	gameBoardÀ
+»
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.javaØP Ø(m
+%42$Array"
+__arrayGet*
+
+%41$Array*
+""⁄
+◊
+í
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.javaØP Ø(Å
+%43Model.GameBoard.Tile"
+__arrayGet*
+
+%42$Array*
+""ôñ
+í
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.javaØP Ø(å
+%44Model.GameBoard.Piece"6Model.GameBoard.Tile#getPiece()LModel/GameBoard/Piece;*
+
+%43Model.GameBoard.Tile2
+getPiece()Ø¨
+í
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.javaØP Ø(ó&
+%45Model.GameBoard.Type.PieceColor"AModel.GameBoard.Piece#getColor()LModel/GameBoard/Type/PieceColor;*
+
+%44Model.GameBoard.Piece2
+getColor()≤Ø
+ì
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.javaØõ Ø(´&
+%46Model.GameBoard.Type.PieceColor"AModel.GameBoard.Piece#getColor()LModel/GameBoard/Type/PieceColor;* 
+
+pieceModel.GameBoard.Piece2
+getColor()*
+2
+1*ã
+4ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java¨% ¨(*®•
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java¨% ¨(8
+%27Model.GameBoard.Location"=Model.GameBoard.Piece#getLocation()LModel/GameBoard/Location;* 
+
+pieceModel.GameBoard.Piece2getLocation()Ì
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java¨% ¨(?
+
+%28int" Model.GameBoard.Location#getX()I*!
+
+%27Model.GameBoard.Location2getX()¯ı
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java¨C ¨(U
+
+%29int" Model.GameBoard.Location#getX()I*)
+'
+newLocationModel.GameBoard.Location2getX()®•
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java¨X ¨(k
+%30Model.GameBoard.Location"=Model.GameBoard.Piece#getLocation()LModel/GameBoard/Location;* 
+
+pieceModel.GameBoard.Piece2getLocation()Ì
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java¨X ¨(r
+
+%31int" Model.GameBoard.Location#getX()I*!
+
+%30Model.GameBoard.Location2getX()®•
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java≠% ≠(8
+%32Model.GameBoard.Location"=Model.GameBoard.Piece#getLocation()LModel/GameBoard/Location;* 
+
+pieceModel.GameBoard.Piece2getLocation()Ì
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java≠% ≠(?
+
+%33int" Model.GameBoard.Location#getY()I*!
+
+%32Model.GameBoard.Location2getY()¯ı
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java≠C ≠(U
+
+%34int" Model.GameBoard.Location#getY()I*)
+'
+newLocationModel.GameBoard.Location2getY()®•
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java≠X ≠(k
+%35Model.GameBoard.Location"=Model.GameBoard.Piece#getLocation()LModel/GameBoard/Location;* 
+
+pieceModel.GameBoard.Piece2getLocation()Ì
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java≠X ≠(r
+
+%36int" Model.GameBoard.Location#getY()I*!
+
+%35Model.GameBoard.Location2getY()⁄
+◊
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.javaØ Ø(
+%37$Array"__id*,**
+Model.GameBoard.GameBoard"
+	gameBoardÀ
+»
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.javaØ Ø(-
+%38$Array"
+__arrayGet*
+
+%37$Array*
+""Ÿ
+÷
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.javaØ Ø(A
+%39Model.GameBoard.Tile"
+__arrayGet*
+
+%38$Array*
+""ÙÒ
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.javaØ Ø(L
+%40boolean" Model.GameBoard.Tile#HasPiece()Z*
+
+%39Model.GameBoard.Tile2
+HasPiece()*
+3
+1*˝
+5ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java´U ´(`¯ı
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java´U ´(g
+
+%22int" Model.GameBoard.Location#getY()I*)
+'
+newLocationModel.GameBoard.Location2getY()®•
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java´j ´(}
+%23Model.GameBoard.Location"=Model.GameBoard.Piece#getLocation()LModel/GameBoard/Location;* 
+
+pieceModel.GameBoard.Piece2getLocation()ÒÓ
+í
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java´j ´(Ñ
+
+%24int" Model.GameBoard.Location#getY()I*!
+
+%23Model.GameBoard.Location2getY()≤Ø
+ì
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java´à ´(ò&
+%25Model.GameBoard.Type.PieceColor"AModel.GameBoard.Piece#getColor()LModel/GameBoard/Type/PieceColor;* 
+
+pieceModel.GameBoard.Piece2
+getColor()åâ
+ì
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java´à ´(•
+
+%26int"-Model.GameBoard.Type.PieceColor#getMoveDir()I*(
+&
+%25Model.GameBoard.Type.PieceColor2getMoveDir()*
+4
+1*í	
+6ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java´ ´(¯ı
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java´ ´(.
+
+%18int" Model.GameBoard.Location#getX()I*)
+'
+newLocationModel.GameBoard.Location2getX()®•
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java´1 ´(D
+%19Model.GameBoard.Location"=Model.GameBoard.Piece#getLocation()LModel/GameBoard/Location;* 
+
+pieceModel.GameBoard.Piece2getLocation()Ì
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java´1 ´(K
+
+%20int" Model.GameBoard.Location#getX()I*!
+
+%19Model.GameBoard.Location2getX()◊
+‘
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java´ ´(L
+
+%21int"java.lang.Math#abs(I)I*"
+java.lang.Math*
+""*
+5
+1*ç	
+7ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java™ ™(!À
+»
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java™0 ™(?$
+%15Model.GameBoard.Type.MoveType"__id*
+"" «
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java™ ™(
+%16Model.GameBoard.Move"Model.GameBoard.Move¢
+ü
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java™ ™(@
+%17"nModel.GameBoard.Move#<init>(LModel/GameBoard/Piece;LModel/GameBoard/Location;LModel/GameBoard/Type/MoveType;)V*
+
+%16Model.GameBoard.Move* 
+
+pieceModel.GameBoard.Piece*)
+'
+newLocationModel.GameBoard.Location*&
+$
+%15Model.GameBoard.Type.MoveType"≥
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java™ ™(A
+
+%16Model.GameBoard.Move*´
+8ì
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java©£ ©(¨€
+ÿ
+ì
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java©£ ©(¨
+%9$Array"__id*,**
+Model.GameBoard.GameBoard"
+	gameBoard˙˜
+ì
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java©≠ ©(ø
+
+%10int" Model.GameBoard.Location#getX()I*)
+'
+newLocationModel.GameBoard.Location2getX()“
+œ
+ì
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java©£ ©(¿
+%11$Array"
+__arrayGet*
+
+%9$Array*
+
+
+%10int˙˜
+ì
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java©¡ ©(”
+
+%12int" Model.GameBoard.Location#getY()I*)
+'
+newLocationModel.GameBoard.Location2getY()·
+ﬁ
+ì
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java©£ ©(‘
+%13Model.GameBoard.Tile"
+__arrayGet*
+
+%11$Array*
+
+
+%12intˆÛ
+ì
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java©£ ©(ﬂ
+%14boolean" Model.GameBoard.Tile#HasPiece()Z*
+
+%13Model.GameBoard.Tile2
+HasPiece()*
+6
+7*ı
+9ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java©N ©(Y˜Ù
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java©N ©(`	
+%4int" Model.GameBoard.Location#getY()I*)
+'
+newLocationModel.GameBoard.Location2getY()ß§
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java©c ©(v
+%5Model.GameBoard.Location"=Model.GameBoard.Piece#getLocation()LModel/GameBoard/Location;* 
+
+pieceModel.GameBoard.Piece2getLocation()ÓÎ
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java©c ©(}	
+%6int" Model.GameBoard.Location#getY()I* 
+
+%5Model.GameBoard.Location2getY()±Æ
+ì
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java©Å ©(ë%
+%7Model.GameBoard.Type.PieceColor"AModel.GameBoard.Piece#getColor()LModel/GameBoard/Type/PieceColor;* 
+
+pieceModel.GameBoard.Piece2
+getColor()äá
+ì
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java©Å ©(û	
+%8int"-Model.GameBoard.Type.PieceColor#getMoveDir()I*'
+%
+%7Model.GameBoard.Type.PieceColor2getMoveDir()*
+6
+8*é	
+10ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java© ©(˜Ù
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java© ©('	
+%0int" Model.GameBoard.Location#getX()I*)
+'
+newLocationModel.GameBoard.Location2getX()ß§
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java©* ©(=
+%1Model.GameBoard.Location"=Model.GameBoard.Piece#getLocation()LModel/GameBoard/Location;* 
+
+pieceModel.GameBoard.Piece2getLocation()ÓÎ
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java©* ©(D	
+%2int" Model.GameBoard.Location#getX()I* 
+
+%1Model.GameBoard.Location2getX()÷
+”
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java© ©(E	
+%3int"java.lang.Math#abs(I)I*"
+java.lang.Math*
+""*
+6
+9*è
+1ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java≥ ≥( À
+»
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java≥ ≥(%$
+%54Model.GameBoard.Type.MoveType"__id*
+"" «
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java≥ ≥(
+%55Model.GameBoard.Move"Model.GameBoard.Move§
+°
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java≥ ≥(&
+%56"=Model.GameBoard.Move#<init>(LModel/GameBoard/Type/MoveType;)V*
+
+%55Model.GameBoard.Move*&
+$
+%54Model.GameBoard.Type.MoveType"≥
+ë
+ÑC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\checkerslogic\src\main\java\Model\GameBoard\GameBoard.java≥ ≥('
+
+%55Model.GameBoard.Move:
+pieceModel.GameBoard.Piece:'
+newLocationModel.GameBoard.LocationB
+Model.GameBoard.GameBoard

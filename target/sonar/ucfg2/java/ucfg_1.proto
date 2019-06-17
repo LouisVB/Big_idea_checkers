@@ -1,0 +1,75 @@
+
+`nl.fhict.s3.restclient.PlayerRestClient#getUser(Ljava/lang/String;)Lnl/fhict/s3/restshared/User;ö
+èC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java ("1*ä
+1ö
+èC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java ( Ù
+Ò
+ö
+èC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java ( 
+%0java.lang.String"__id*4*2)
+'nl.fhict.s3.restclient.PlayerRestClient"
+url˜
+Ù
+ö
+èC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java (&
+%1java.lang.String"__concat*
+
+%0java.lang.String*
+
+keyjava.lang.String€
+ÿ
+ö
+èC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java ('
+queryjava.lang.String"__id*
+
+%1java.lang.String∆
+√
+ö
+èC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java (
+%2org.slf4j.Logger"__id*
+""Í
+Á
+ö
+èC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java ( 
+%3java.lang.String"__concat*	
+GET: *
+
+queryjava.lang.String¶£
+ö
+èC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java (!
+
+%4void"*org.slf4j.Logger#info(Ljava/lang/String;)V*
+
+%2org.slf4j.Logger*
+
+%3java.lang.String2info(Ljava/lang/String;)ˆÛ
+ö
+èC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java# (*,
+%5&org.apache.http.client.methods.HttpGet"&org.apache.http.client.methods.HttpGet∑
+¥
+ö
+èC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java (1
+%6"Borg.apache.http.client.methods.HttpGet#<init>(Ljava/lang/String;)V*.
+,
+%5&org.apache.http.client.methods.HttpGet*
+
+queryjava.lang.Stringé
+ã
+ö
+èC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java (26
+httpGetQuery&org.apache.http.client.methods.HttpGet"__id*.
+,
+%5&org.apache.http.client.methods.HttpGet∞
+≠
+ö
+èC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java ()!
+%7nl.fhict.s3.restshared.User"Énl.fhict.s3.restclient.PlayerRestClient#executeQuery(Lorg/apache/http/client/methods/HttpRequestBase;)Lnl/fhict/s3/restshared/User;*+)
+'nl.fhict.s3.restclient.PlayerRestClient*8
+6
+httpGetQuery&org.apache.http.client.methods.HttpGet"¬
+ö
+èC:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\restclient\src\main\java\nl\fhict\s3\restclient\PlayerRestClient.java (*#
+!
+%7nl.fhict.s3.restshared.User:
+keyjava.lang.StringB+)
+'nl.fhict.s3.restclient.PlayerRestClient

@@ -1,0 +1,60 @@
+
+fnl.fhict.s3.websocketclient.WebsocketClient#getInstance()Lnl/fhict/s3/websocketclient/WebsocketClient;¤
+™C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\WebsocketClient.java" (-"3*›
+2¤
+™C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\WebsocketClient.java! !(,Š‡
+¤
+™C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\WebsocketClient.java! !(*1
+%1+nl.fhict.s3.websocketclient.WebsocketClient"+nl.fhict.s3.websocketclient.WebsocketClientœ
+™
+¤
+™C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\WebsocketClient.java! !(,
+%2"5nl.fhict.s3.websocketclient.WebsocketClient#<init>()V*3
+1
+%1+nl.fhict.s3.websocketclient.WebsocketClient¢
+Ÿ
+¤
+™C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\WebsocketClient.java! !(,;-
++nl.fhict.s3.websocketclient.WebsocketClient"
+
+instance"__id*3
+1
+%1+nl.fhict.s3.websocketclient.WebsocketClientÐ
+Í
+¤
+™C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\WebsocketClient.java" "(
+%3org.slf4j.Logger"__id*
+""ÅÂ
+¤
+™C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\WebsocketClient.java" "(A
+
+%4void"*org.slf4j.Logger#info(Ljava/lang/String;)V*
+
+%3org.slf4j.Logger*-+
+)GameClientEndPoint singleton instantiated2info(Ljava/lang/String;)*
+1*×
+3¤
+™C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\WebsocketClient.java   (¢
+Ÿ
+¤
+™C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\WebsocketClient.java   (1
+%0+nl.fhict.s3.websocketclient.WebsocketClient"__id*=*;-
++nl.fhict.s3.websocketclient.WebsocketClient"
+
+instance*
+2
+1*®
+1¤
+™C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\WebsocketClient.java$ $(¢
+Ÿ
+¤
+™C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\WebsocketClient.java$ $(1
+%5+nl.fhict.s3.websocketclient.WebsocketClient"__id*=*;-
++nl.fhict.s3.websocketclient.WebsocketClient"
+
+instance"Ü
+¤
+™C:\Users\Louis\Dropbox\Semester_3\Software\git_big_idea\Big_idea_checkers\websocketsclient\src\main\java\nl\fhict\s3\websocketclient\WebsocketClient.java$ $(3
+1
+%5+nl.fhict.s3.websocketclient.WebsocketClientB/"-
++nl.fhict.s3.websocketclient.WebsocketClient
