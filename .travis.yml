@@ -5,3 +5,11 @@ jdk:
 branches:
   only:
     - master
+
+addons:
+  sonarcloud:
+    organization: LouisVB
+    token:
+      secure: dfa073ffb7092a0a5a070d7ff3f293d160153ce0
+      branches:
+        - master
