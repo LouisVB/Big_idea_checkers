@@ -1,14 +1,15 @@
 package nl.fhict.s3.websocketserver.GameSession;
 
 import Logic.Game;
+import Model.Player;
 import nl.fhict.s3.websocketserver.Interface.Command;
 import nl.fhict.s3.websocketserver.SocketMessage.Factory;
-import nl.fhict.s3.websocketserver.SocketMessage.Operation;
 import nl.fhict.s3.websocketserver.SocketMessage.RequestPackager;
 import nl.fhict.s3.websocketserver.SocketMessage.SocketMessage;
 import nl.fhict.s3.websocketserver.endpoint.GameEndPoint;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import javax.websocket.Session;
 
 
 import java.util.Observable;
@@ -46,9 +47,17 @@ public class GameSession implements Observer {
         return game;
     }
 
-//    public void broadcastToClients(String message) {
-//        websocket.sendBroadcast(message);
-//    }
+    public void broadcastToClients(String message) {
+        websocket.sendBroadcast(message);
+    }
+
+    public void messageToClients(Session session, String message) {
+        websocket.sendMessage(session,message);
+    }
+
+    public void addplayerToSession(Session session, Player player) {
+        websocket.addPlayer(player, session);
+    }
 
     @Override
     public void update(Observable o, Object arg) {

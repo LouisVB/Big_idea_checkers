@@ -14,7 +14,8 @@ import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
 import nl.fhict.s3.websocketserver.Command.Commands.RegisterPlayer;
-import nl.fhict.s3.websocketserver.SocketMessage.Operation;
+
+import nl.fhict.s3.websocketserver.GameSession.GameSession;
 import nl.fhict.s3.websocketserver.SocketMessage.SocketMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,6 +42,7 @@ public class GameEndPoint extends Observable {
     @OnOpen
     public void onConnect(Session session) {
         log.info("Connected SessionID: {}", session.getId());
+        GameSession gameSession = GameSession.getInstance(this);
         sessions.add(session);
         log.info("Session added. Session count is {}", sessions.size());
     }
@@ -50,6 +52,7 @@ public class GameEndPoint extends Observable {
         Gson gson = new Gson();
         log.info("Session ID: {} Received: {}", session.getId(), message);
         SocketMessage latestMessage = gson.fromJson(message, SocketMessage.class);
+
         if(latestMessage.getOperation().getType() == 1) {
             RegisterPlayer registerPlayer = new RegisterPlayer();
             registerPlayer.setUserSession(session);
@@ -89,4 +92,6 @@ public class GameEndPoint extends Observable {
     public static Map<Session, Player> getPlayerSession() {
         return playerSession;
     }
+
+
 }

@@ -9,7 +9,6 @@ import nl.fhict.s3.websocketserver.GameSession.GameSession;
 import nl.fhict.s3.websocketserver.Interface.Command;
 import nl.fhict.s3.websocketserver.SocketMessage.RequestPackager;
 import nl.fhict.s3.websocketserver.SocketMessage.SocketMessage;
-import nl.fhict.s3.websocketserver.endpoint.GameEndPoint;
 import javax.websocket.Session;
 
 
@@ -17,7 +16,6 @@ public class RegisterPlayer implements Command {
 
     private javax.websocket.Session userSession;
     private RequestPackager packager;
-    private GameEndPoint endPoint = GameEndPoint.getInstance();
     private GameSession gameSession = GameSession.getInstance();
     private Gson gson;
     private PlayerRestClient restClient;
@@ -45,14 +43,14 @@ public class RegisterPlayer implements Command {
                 player.setMyPieces(PieceColor.White);
             }
             gameSession.getGame().newPlayer(player);
-            endPoint.addPlayer(player, userSession);
-            endPoint.sendMessage(userSession, packager.Registerplayer(player));
+            gameSession.addplayerToSession(userSession, player);
+            gameSession.messageToClients(userSession, packager.Registerplayer(player));
             if(gameSession.getGame().getPlayers().size() == 2) {
                 GameSession.getInstance().getGame().startGame();
-                endPoint.sendBroadcast(packager.startGame(GameSession.getInstance().getGame()));
+                GameSession.getInstance().broadcastToClients(packager.startGame(GameSession.getInstance().getGame()));
             }
         }else { // if authentication failes, send empty player back.
-            endPoint.sendMessage(userSession, packager.Registerplayer(new Player()));
+            gameSession.messageToClients(userSession, packager.Registerplayer(new Player()));
         }
     }
 
