@@ -107,24 +107,16 @@
                     <executions>
                         <!-- prepare agent for measuring integration tests -->
                         <execution>
-                            <id>prepare-integration-tests</id>
-                            <phase>pre-integration-test</phase>
                             <goals>
                                 <goal>prepare-agent</goal>
                             </goals>
-                            <configuration>
-                                <destFile>${basedir}/target/jacoco.exec</destFile>
-                            </configuration>
                         </execution>
                         <execution>
-                            <id>jacoco-site</id>
-                            <phase>post-integration-test</phase>
+                            <id>report</id>
+                            <phase>prepare-package</phase>
                             <goals>
                                 <goal>report</goal>
                             </goals>
-                            <configuration>
-                                <dataFile>${basedir}/target/jacoco.exec</dataFile>
-                            </configuration>
                         </execution>
                     </executions>
                 </plugin>
