@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: Logic.GameTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in Logic.GameTest
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.078 s <<< FAILURE! - in Logic.GameTest
+startGameRedPieceHasCurrentAtTurnTest  Time elapsed: 0.022 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <null> but was: <Model.Player@45752059>
+	at Logic.GameTest.startGameRedPieceHasCurrentAtTurnTest(GameTest.java:48)
+
+startGameWithNoRegisteredPlayersTest  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at Logic.GameTest.startGameWithNoRegisteredPlayersTest(GameTest.java:30)
+

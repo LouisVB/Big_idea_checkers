@@ -64,9 +64,12 @@ public class Game implements Checkers {
 
     @Override
     public void startGame() {
-        gameBoard = new GameBoard();
-        gameBoard.createBoard();
-        isGameStarted = true;
+        if(getPlayers().size() ==  2 ) {
+            gameBoard = new GameBoard();
+            gameBoard.createBoard();
+            isGameStarted = true;
+            setCurrentPlayerAtTurn(hasredpiece());
+        }
     }
 
     @Override
@@ -108,6 +111,17 @@ public class Game implements Checkers {
         }
     }
 
+    private Player hasredpiece(){
+        Player start;
+        start = new Player();
+        for(Player player : Players) {
+            if (player.getMyPieces() != PieceColor.Red) {
+                continue;
+            }
+            start = player;
+        }
+        return start;
+    }
 
 
 
