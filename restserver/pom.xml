@@ -17,7 +17,7 @@
 
   <properties>
     <jersey-server.version>2.27</jersey-server.version>
-    <jetty-server.version>9.4.14.v20181114</jetty-server.version>
+    <jetty-server.version>9.4.35.v20201120</jetty-server.version>
   </properties>
 
   <dependencies>
